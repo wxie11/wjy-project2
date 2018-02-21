@@ -13,7 +13,7 @@ Your design, which you will test with actual users for Project Three, must accom
 * Yifan Yao: Construct, debug existing code, review pull requests
 * Wenzhao Zhang: Research, collaborate, keep things on track
 * Wenwen Xie: Build web structure and design the UI
-*
+* Jessica DeJesus: Written ideals, design
 *
 
 ## :whale:Pull Requests(PR)
