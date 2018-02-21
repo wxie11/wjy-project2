@@ -14,7 +14,7 @@ Your design, which you will test with actual users for Project Three, must accom
 * Wenzhao Zhang: Research, collaborate, keep things on track
 * Wenwen Xie: Build web structure and design the UI
 * Jessica DeJesus: Written ideals, design
-*
+* Jia Yu Huang: Designing, develop content
 
 ## :whale:Pull Requests(PR)
 
