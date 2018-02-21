@@ -1,0 +1,44 @@
+{
+
+  "settings": {
+    "_version": "Stolley House Config, v. 1.0.1, 20171025",
+    "_eslint_version": "4.9.0",
+    "_rules_url": "https://eslint.org/docs/rules/"
+  },
+  "root": true, // don't look further up the directory tree for any more eslint rules
+  "env": {
+    "browser": true, // for browser testing
+    "jquery": true // with jQuery, if used
+  },
+  "extends": "eslint:recommended", // load basic eslint rules
+  "rules": {
+    // Deviations from eslint:recommended
+    "no-console": "off", // allow use of console calls
+
+    // Best Practices
+    "block-scoped-var": "warn", // scope variables to blocks
+    "curly": ["error", "all"], // always use curly braces around blocks
+    "default-case": "warn", // require default cases in switch statements
+    "eqeqeq": "error", // always test for type, !== and ===
+    "no-alert": "warn", // no annoying pop-up boxes
+    "no-implicit-globals": "warn", // warn about global variables
+    "vars-on-top": 1, // declare variables at the top of function scope
+    "yoda": "error", // disallow Yoda conditions
+
+    // Variables
+    "no-undefined": "error", // disallow undefined as an identifier
+
+    // Stylistic Issues
+    "comma-dangle": ["error", "never"], // no trailing commas
+    "comma-spacing": ["error", { "before": false, "after": true }], // spaces after commas
+    "func-call-spacing": "warn", // no spaces between function name and parentheses
+    "indent": ["error", 2], // indent by two spaces
+    "linebreak-style": ["error", "unix"], // Unix-style line endings
+    "multiline-comment-style": ["warn", "separate-lines"], // double-slash style comments
+    "spaced-comment": ["warn", "always"], // spaces after double-slash comment markers
+    "semi": ["warn", "always"], // always require semicolons after statements
+    "semi-spacing": ["error", {"before": false, "after": true}] // spaces after semicolons
+
+  }
+
+}
