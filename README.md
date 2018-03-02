@@ -2,7 +2,7 @@
 
 ## :snowman:Proposal
 
-[Checkout Our Proposal](docs/proposal.md)
+[Checkout Our Proposal](docs/Proposal.md)
 
 ## :sparkles:Team Members and Primary Strengths
 
