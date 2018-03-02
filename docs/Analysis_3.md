@@ -1,8 +1,8 @@
-# Analysis for TicketMaster
+# Analysis for Ticketmaster
 
-Ticket Master is where "buy tickets concerts, sports, arts, theater and other
-events." Find more tickets and options before you going to any venues so you'll
-have guaranteed seats.
+[Ticketmaster](https://www.ticketmaster.com/) is where "buy tickets concerts,
+sports, arts, theater and other events". Find more tickets and options before
+you going to any venues so you'll have guaranteed seats.
 
 ## Link to Our Video Demonstration
 

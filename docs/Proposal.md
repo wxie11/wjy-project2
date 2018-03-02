@@ -2,7 +2,10 @@
 
 ## Introduction
 
-Have you ever been to an event where you go with a group of people and you all don’t have seats together and it’s just at the IIT auditorium? Or have you ever gone to an event where you spend too much time try to find a seat in the auditorium? Well, get ready for IIT Talk!
+Have you ever been to an event where you go with a group of people and you all
+don’t have seats together and it’s just at the IIT auditorium? Or have you ever
+gone to an event where you spend too much time try to find a seat in the auditorium?
+Well, get ready for IIT Talk!
 
 ## Problem
 
@@ -22,7 +25,7 @@ For the events that will take plans in the IIT auditorium the solution will be I
 * Choose the Talk time event
 * Make Payment/Check out
 	* Card Holder Name
-	* Card  #
+	* Card #
 	* Expiration Date
 	* Zip code
 * Print ticket with Name of the Talk/Time/Date/Seat# (Maybe generate a barcode/sent ticket to phone)
