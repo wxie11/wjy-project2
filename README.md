@@ -2,7 +2,7 @@
 
 ## :snowman:Proposal
 
-[Checkout Our Proposal](docs/Proposal.md)
+[Checkout Our Proposal](https://wjy-itmd-362.github.io/wjy-project2/proposal/2018/02/22/proposal-iit-talk.html)
 
 ## :sparkles:Team Members and Primary Strengths
 
