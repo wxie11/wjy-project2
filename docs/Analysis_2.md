@@ -14,12 +14,17 @@ mobile ticket(if available)" etc. Here is our analysis for their process.
 
 ## Pros of Webpage
 
-*
+* Always contains a summary of the movie you selected and remaining time on the right side
+  during the ticket buying process
+* Easy to use & navigate
+* Sign up is NOT required, different sign in options available
 
 ## Cons of Webpage
 
-*
+* Time limit! (Can be both pro and con)
+* During the seat selection process, if you wish to change the number of tickets you
+  want to purchase, you have to go back and start over again
 
 ## Ideas for Our Own Webpage
 
-*
+* Timer, maybe?

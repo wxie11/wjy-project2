@@ -16,14 +16,19 @@ helping you find tickets quickly and safely".
 ## Pros of Webpage
 
 * Before started, ask user amount of the tickets to precise availability
-* Picture of actually area
+* Picture of actual area
+  * Zoom in and zoom out function
+  * Various filter options available
   * When click a specific area, the ticket price for that area will be filtered
   * When hover on a specific price, the area for that price will be highlighted
+
 
 ## Cons of Webpage
 
 * Validation?
+* You have to sign up in order to purchase a ticket
 
 ## Ideas for Our Own Webpage
 
 * Get a diagram drawn for IIT auditorium
+* Some of the filtering rules can be applied to our webpage
