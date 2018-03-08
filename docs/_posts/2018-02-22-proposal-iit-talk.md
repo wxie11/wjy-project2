@@ -1,5 +1,9 @@
-# Proposal: IIT TALK
-
+---
+layout: post
+title:  "Proposal: IIT TALK"
+date:   2018-02-22 17:23:23 -0600
+categories: proposal
+---
 ## Introduction
 
 Have you ever been to an event where you go with a group of people and you all
@@ -18,7 +22,8 @@ When it comes to an event, there are many issues that can arise like:
 
 ## Solution
 
-For the events that will take plans in the IIT auditorium the solution will be IIT Talk booking system! The functions of it will be:
+For the events that will take plans in the IIT auditorium the solution will be
+IIT Talk booking system! The functions of it will be:
 
 * Book tickets
 * Choose seats

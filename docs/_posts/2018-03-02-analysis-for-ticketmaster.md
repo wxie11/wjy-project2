@@ -1,5 +1,9 @@
-# Analysis for Ticketmaster
-
+---
+layout: post
+title:  "Analysis for Ticketmaster"
+date:   2018-03-02 11:55:46 -0600
+categories: analysis
+---
 [Ticketmaster](https://www.ticketmaster.com/) is where "buy tickets concerts,
 sports, arts, theater and other events". Find more tickets and options before
 you going to any venues so you'll have guaranteed seats.

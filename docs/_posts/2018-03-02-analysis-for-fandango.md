@@ -1,5 +1,9 @@
-# Analysis for Fandango
-
+---
+layout: post
+title:  "Analysis for Fandango"
+date:   2018-03-02 11:55:46 -0600
+categories: analysis
+---
 [Fandango](https://www.fandango.com/)
 
 Most know, major movie theater with sells thousands of tickets in a week. When
