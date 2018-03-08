@@ -21,17 +21,21 @@ mobile ticket(if available)" etc. Here is our analysis for their process.
 
 ### Pros of Webpage
 
+* Patterns displayed on top when completely your ticket order; gives the user the complete journey they have to take to successful purchase tickets (Tickets----Payment----Confirmation)
 * Always contains a summary of the movie you selected and remaining time on the right side
   during the ticket buying process
 * Easy to use & navigate
 * Using time limit to hold ticket for users, wait them to complete the payment or release tickets
 * Sign up is NOT required, different sign in options available
+* It doesn’t make you enter the CVV, it give the user one less thing to get confused about and one else thing to waste time one, since they are on a timer
 
 ### Cons of Webpage
 
 * During the seat selection process, if you wish to change the number of tickets you
   want to purchase, you have to go back and start over again
+*
+
 
 ### Ideas for Our Own Webpage
 
-* Timer, maybe?
+* Shows display of title of talk, how many tickets you got, and what time your event will take place, like for the fandango and show you want ticket(s) you got for the movie you’re paying for
