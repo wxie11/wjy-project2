@@ -17,6 +17,8 @@ you going to any venues so you'll have guaranteed seats.
 
 ### Pros of Webpage
 
+* Show a clear and simple list of events that they can purchase tickets for with the date on the left hand side of them
+* When it shows the display of the arena, it has a nice division in which it shows the user how the stage and seats are set up, but yet, they still have to the right how much the tickets are for that event (give them a good idea on what they’re paying for)
 * Price filter which allow users to select tickets within the price range that they want
 * The event name, time, and location are always on top of the website throughout the process
 * Highlighting the input boxes in red if the information entered is not correct and shows error messages
@@ -35,8 +37,10 @@ you going to any venues so you'll have guaranteed seats.
   input box, if they did those in purpose, well then...it is not a good design and
   the same error messages are repeated at the error message box)
 
+
 ### Ideas for Our Own Webpage
 
 * Allow users check out as a guest
 * Always show event related information on a place where it has high visibility through out the process
 * Create simple and clean layout and design for the webpages
+* When validation comes up saying user didn’t write the information right, to display small message say “please enter a 5 digit area code” , unlike here where they only let you know for some of them
