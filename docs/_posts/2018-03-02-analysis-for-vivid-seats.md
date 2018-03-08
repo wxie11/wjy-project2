@@ -1,5 +1,9 @@
-# Analysis for Vivid Seats
-
+---
+layout: post
+title:  "Analysis for Vivid Seats"
+date:   2018-03-02 11:55:46 -0600
+categories: analysis
+---
 "[Vivid Seats](https://www.vividseats.com/) is a full-service marketplace that
 facilitates transactions between fans looking to buy or resell tickets to their
 favorite sports, concerts, and theater events. Their mission to improve and
