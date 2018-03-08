@@ -30,16 +30,21 @@ helping you find tickets quickly and safely".
   * When hover on a specific price, the area for that price will be highlighted
 * After event is chosen, displays photo in which allows the user to see the area in which the tickets are available in
 * Lets you filter out the areas you prefer to be seated in
-* Use the word 'Required' to show the required area in the form that users need to fill out
+* Use the word "Required" to show the required area in the form that users need to fill out
 
 ### Cons of Webpage
 
 * Validation needs to be improved. In the video, author put letters instead of
-  numbers in 'Zip' and 'Phone' and still submitted the form successfully
-* Doesn't always correct you and
+  numbers in "Zip" and "Phone" and still submitted the form successfully
+* Does not always correct you and
 * You have to sign up in order to purchase a ticket
-* The complete separate page to choosing country and delivery can be combined with payment or even confirmation; there is no need to make the user feel like it’s a lot of work to get a ticket for an event
-* This also makes it evident that the billing area and payment area could probably share a page in which also permits the user to just enter they’re information all at the same time and they won’t feel like they’re going to have to enter the same information again and again
+* The complete separate page to choosing country and delivery can be combined
+  with payment or even confirmation; There is no need to make the user feel like
+  it’s a lot of work to get a ticket for an event
+* This also makes it evident that the billing area and payment area could probably
+  share a page in which also permits the user to just enter they’re information all
+  at the same time and they won’t feel like they’re going to have to enter the
+  same information again and again
 
 
 ### Ideas for Our Own Webpage
@@ -47,4 +52,5 @@ helping you find tickets quickly and safely".
 * Get a diagram drawn for IIT auditorium
 * Some of the filtering rules can be applied to our webpage
 * Tell users which information fields are required to fill out
-* Keep the layout and colors of the page simple; the color white and red go really well, especially with ours being IIT themed 
+* Keep the layout and colors of the page simple; White and red go really well,
+  especially with ours being IIT themed

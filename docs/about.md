@@ -3,7 +3,8 @@ layout: page
 title: About
 permalink: /about/
 ---
-# Project Description
+
+## Project Description
 
 For this project, you will work in self-selected teams of three or four students
 to design a booking system for purchasing tickets for travel, movies, concerts,

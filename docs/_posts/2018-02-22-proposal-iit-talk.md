@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Proposal: IIT TALK"
+title:  "Proposal: IIT Talk"
 date:   2018-02-22 17:23:23 -0600
 categories: proposal
 ---
@@ -33,7 +33,7 @@ IIT Talk booking system! The functions of it will be:
 	* Card Holder Name
 	* Card #
 	* Expiration Date
-	* Zip code
+	* Zip Code
 * Print ticket with Name of the Talk/Time/Date/Seat# (Maybe generate a barcode/sent ticket to phone)
 
 Also for the people who are running the event, they will be able to:
