@@ -8,3 +8,47 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* Begin site styles below */
+html {
+  font-size: 1.125em; /*18/16=1.125*/
+  line-height: 1.222em; /*22/18=1.222*/
+}
+
+header {
+  background-color: black;
+}
+
+h1 {
+  color: red;
+}
+
+footer {
+  background-color: black;
+}
+
+ul {
+  padding-bottom:22px;
+  padding-left: 22px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+ul:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#footer {
+  color: red;
+}
+
+#banner {
+  width: 100%;
+}
+
+@media screen and (min-width: 1400px) {
+}
+@media screen and (min-width: 990px) {
+}
+@media screen and (min-width: 600px) {
+}
