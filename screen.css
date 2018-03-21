@@ -7,10 +7,22 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,.reset{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
+/*
+Default Values:
+baseline 22px
+font-size 18px
+line-height = baseline / font-size
+
+Ready to Use:
+0.6111111111em; 11 / 18 = 0.6111111111
+1.2222222222em; 22 / 18 = 1.2222222222
+2.4444444444em; 44 / 18 = 2.4444444444
+*/
+
 /* Begin site styles below */
 html {
-  font-size: 1.125em; /*18/16=1.125*/
-  line-height: 1.222em; /*22/18=1.222*/
+  font-size: 1.125em; /* 18 / 16 = 1.125 */
+  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 header {
@@ -26,8 +38,8 @@ footer {
 }
 
 ul {
-  padding-bottom:22px;
-  padding-left: 22px;
+  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  padding-left: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 a:link {
@@ -35,7 +47,7 @@ a:link {
 }
 
 ul:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 #footer {
@@ -44,6 +56,26 @@ ul:hover {
 
 #banner {
   width: 100%;
+}
+
+#form-card label {
+  display: block;
+  margin-bottom: 0;
+  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+}
+#form-card input {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  height: 2.4444444444em; /* 44 / 18 = 2.4444444444 */
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 0;
+}
+#form-card ul li {
+  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 @media screen and (min-width: 1400px) {
