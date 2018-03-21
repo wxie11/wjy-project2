@@ -14,10 +14,9 @@ font-size 18px
 line-height = baseline / font-size
 
 Ready to Use:
-0.6111111111em; 11 / 18 = 0.6111111111
-1.2222222222em; 22 / 18 = 1.2222222222
-2.4444444444em; 44 / 18 = 2.4444444444
-*/
+/* 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+/* 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+/* 2.4444444444em; /* 44 / 18 = 2.4444444444 */
 
 /* Begin site styles below */
 html {
@@ -31,14 +30,13 @@ body {
 
 header {
   background-color: black;
-  padding-bottom: .7em;
-  padding-top: .7em;
+  padding-bottom: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  padding-top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
 }
 
 section {
   padding-left: 1.2222222222em;
   padding-right: 1.2222222222em;
-
 }
 
 h1 {
@@ -48,8 +46,8 @@ h1 {
 
 footer {
   background-color: black;
-  padding-bottom: .7em;
-  padding-top: .7em;
+  padding-bottom: 0.7em;
+  padding-top: 0.7em;
 }
 
 ul {
@@ -61,8 +59,8 @@ a:link {
   text-decoration: none;
 }
 
-a:visited{
-  color:black;
+a:visited {
+  color: black;
 }
 
 ul:hover {
@@ -98,6 +96,29 @@ ul:hover {
 }
 #form-card ul li {
   padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+}
+.hasjs #input-cardName,
+.hasjs #input-cardNumber,
+.hasjs #input-expDate,
+.hasjs #input-billZip {
+  position: relative;
+}
+.hasjs #input-cardName label,
+.hasjs #input-cardNumber label,
+.hasjs #input-expDate label,
+.hasjs #input-billZip label {
+  transition: top 0.8s;
+  top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  position: absolute;
+}
+.hasjs #input-cardName label.active,
+.hasjs #input-cardNumber label.active,
+.hasjs #input-expDate label.active,
+.hasjs #input-billZip label.active {
+  top: -0.6111111111em; /* 11 /18 = 0.6111111111 */
+}
+.red {
+  color: #E91E63;
 }
 
 @media screen and (min-width: 1400px) {
