@@ -53,7 +53,7 @@ jQuery(function($) {
     }
     if ($('#billZip').val().length === 5) {
       $.ajax({
-        url: 'http://api.zippopotam.us/us/' + zip,
+        url: 'https://api.zippopotam.us/us/' + zip,
         statusCode: {
           200: function(data) {
             console.log(data);
