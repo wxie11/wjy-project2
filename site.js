@@ -11,7 +11,7 @@ $.noConflict();
 jQuery(function($) {
   // Define veriables
   var validate = {
-    billZip: false
+    zip: false
   };
 
   $('html').removeClass('nojs');
@@ -47,24 +47,12 @@ jQuery(function($) {
     $('#billZip').removeClass('red');
   });
   $('#billZip').on('blur', function() {
-    var zip = $(this).val();
-    if ($('#billZip').val().length === 0) {
+    var zipCode = $(this).val();
+    if (zipCode.length === 0) {
       $('#input-billZip label').removeClass('active');
     }
-    if ($('#billZip').val().length === 5) {
-      $.ajax({
-        url: 'https://api.zippopotam.us/us/' + zip,
-        statusCode: {
-          200: function(data) {
-            console.log(data);
-            validate.billZip === true;
-          },
-          404: function() {
-            $('#billZip').addClass('red');
-            validate.billZip === false;
-          }
-        }
-      });
+    if (zipCode.length === 5) {
+      zipValidation(zipCode);
     }
   });
   $('#form').on("submit", function(e) {
@@ -74,6 +62,21 @@ jQuery(function($) {
     e.preventDefault();
   });
 
-  //
+  // Zip code validation
+  function zipValidation(zipCode) {
+    $.ajax({
+      url: 'https://api.zippopotam.us/us/' + zipCode,
+      statusCode: {
+        200: function(data) {
+          console.log(data);
+          validate.zip === true;
+        },
+        404: function() {
+          $('#billZip').addClass('red');
+          validate.zip === false;
+        }
+      }
+    });
+  }
 
 });
