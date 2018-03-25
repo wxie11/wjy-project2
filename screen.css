@@ -141,7 +141,7 @@ ul:hover {
   cursor: pointer;
 }
 input[type="checkbox"]:checked + label {
-  background: #bada55;
+  background: #f44195;
   transition: 0.5s;
 }
 .seat {
