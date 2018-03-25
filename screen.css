@@ -14,9 +14,10 @@ font-size 18px
 line-height = baseline / font-size
 
 Ready to Use:
-/* 0.6111111111em; /* 11 / 18 = 0.6111111111 */
-/* 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-/* 2.4444444444em; /* 44 / 18 = 2.4444444444 */
+/*| Copy from here */
+/*| 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+/*| 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+/*| 2.4444444444em; /* 44 / 18 = 2.4444444444 */
 
 /* Begin site styles below */
 html {
@@ -75,9 +76,10 @@ ul:hover {
 #banner {
   width: 100%;
   background-color: black;
-  padding-bottom: 5px;
+  padding-bottom: 0.3055555556em; /* 5.5 / 18 = 0.3055555556 */
 }
 
+/* Payment */
 #form-card label {
   display: block;
   margin-bottom: 0;
@@ -120,6 +122,8 @@ ul:hover {
 .red {
   color: #E91E63;
 }
+
+/* Seats */
 .row1 {
   display: flex;
   flex-direction: row;
@@ -131,16 +135,17 @@ ul:hover {
 .hidden {
   display: none;
 }
-.individual{
+.individual {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
+  height: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
   text-align: center;
   border: 1px solid #ddd;
-  line-height: 25px;
+  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   cursor: pointer;
 }
-input[type="checkbox"]:checked + label {
+#row1 input[type="checkbox"]:checked + label,
+#row2 input[type="checkbox"]:checked + label {
   background: #f44195;
   transition: 0.5s;
 }
