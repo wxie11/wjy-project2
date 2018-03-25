@@ -53,9 +53,11 @@ jQuery(function($) {
     }
     if (zipCode.length === 5) {
       zipValidation(zipCode);
+    } else if (zipCode.length !== 5) {
+      $('#billZip').addClass('red');
     }
   });
-  $('#form').on("submit", function(e) {
+  $('#form-card').on("submit", function(e) {
     if (validate.billZip === true) {
       return true;
     }
