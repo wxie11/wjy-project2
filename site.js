@@ -10,7 +10,13 @@ $.noConflict();
 // jQuery 3.x-style ready event and locally scoped $
 jQuery(function($) {
   // Define veriables
+  var reg = {
+    name: /^[a-zA-Z\s]+$/,
+    number: /^(\d{16})$/
+  };
   var validate = {
+    name: false,
+    number: false,
     zip: false
   };
 
@@ -20,18 +26,34 @@ jQuery(function($) {
   // Animation for payment/index.html
   $('#cardName').on('focus', function() {
     $('#input-cardName label').addClass('active');
+    $('#cardName').removeClass('red');
   });
   $('#cardName').on('blur', function() {
     if ($('#cardName').val().length === 0) {
       $('#input-cardName label').removeClass('active');
     }
+    if (!reg.name.test($('#cardName').val())) {
+      $('#cardName').addClass('red');
+      validate.name = false;
+    } else {
+      validate.name = true;
+    }
   });
   $('#cardNumber').on('focus', function() {
     $('#input-cardNumber label').addClass('active');
+    $('#cardNumber').removeClass('red');
   });
   $('#cardNumber').on('blur', function() {
-    if ($('#cardNumber').val().length === 0) {
+    var cardNumber = $(this).val();
+    var cardType = null;
+    if (cardNumber.length === 0) {
       $('#input-cardNumber label').removeClass('active');
+    }
+    if (cardNumber.length !== 16 || !reg.number.test(cardNumber)) {
+      $('#cardNumber').addClass('red');
+    } else {
+      cardType = cardValidation(cardNumber);
+      console.log(cardType);
     }
   });
   $('#expDate').on('focus', function() {
@@ -53,14 +75,47 @@ jQuery(function($) {
     }
     if (zipCode.length === 5) {
       zipValidation(zipCode);
+    } else if (zipCode.length !== 5) {
+      $('#billZip').addClass('red');
     }
   });
-  $('#form').on("submit", function(e) {
-    if (validate.billZip === true) {
+  $('#form-card').on("submit", function(e) {
+    if (validate.name === true && validate.number === true && validate.zip === true) {
       return true;
     }
     e.preventDefault();
   });
+
+  // Card number validation
+  function cardValidation(cardNumber) {
+    var cardType = null;
+    if (cardNumber.substring(0, 1) === "3") {
+      cardType = "American Express";
+      validate.number = true;
+      return cardType;
+    }
+    if (cardNumber.substring(0, 1) === "4") {
+      cardType = "Visa";
+      validate.number = true;
+      return cardType;
+    }
+    if (cardNumber.substring(0, 1) === "5") {
+      cardType = "Mastercard";
+      validate.number = true;
+      return cardType;
+    }
+    if (cardNumber.substring(0, 2) === "60" || cardNumber.substring(0, 2) === "65") {
+      cardType = "Discover";
+      validate.number = true;
+      return cardType;
+    }
+    else {
+      $('#cardNumber').addClass('red');
+      cardType = "unknown";
+      validate.number = false;
+      return cardType;
+    }
+  }
 
   // Zip code validation
   function zipValidation(zipCode) {
@@ -69,11 +124,11 @@ jQuery(function($) {
       statusCode: {
         200: function(data) {
           console.log(data);
-          validate.zip === true;
+          validate.zip = true;
         },
         404: function() {
           $('#billZip').addClass('red');
-          validate.zip === false;
+          validate.zip = false;
         }
       }
     });
