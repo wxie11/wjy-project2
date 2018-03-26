@@ -12,11 +12,13 @@ jQuery(function($) {
   // Define veriables
   var reg = {
     name: /^[a-zA-Z\s]+$/,
-    number: /^(\d{16})$/
+    number: /^(\d{16})$/,
+    exp: /^\d{2}\/\d{4}$/
   };
   var validate = {
     name: false,
     number: false,
+    exp: false,
     zip: false
   };
 
@@ -48,8 +50,9 @@ jQuery(function($) {
     var cardType = null;
     if (cardNumber.length === 0) {
       $('#input-cardNumber label').removeClass('active');
+      $('#cardNumber').removeClass('red');
     }
-    if (cardNumber.length !== 16 || !reg.number.test(cardNumber)) {
+    if (!reg.number.test(cardNumber)) {
       $('#cardNumber').addClass('red');
     } else {
       cardType = cardValidation(cardNumber);
@@ -58,10 +61,20 @@ jQuery(function($) {
   });
   $('#expDate').on('focus', function() {
     $('#input-expDate label').addClass('active');
+    $('#expDate').attr('placeholder', 'mm/yyyy');
+    $('#expDate').removeClass('red');
   });
   $('#expDate').on('blur', function() {
-    if ($('#expDate').val().length === 0) {
+    var expDate = $(this).val();
+    if (expDate.length === 0) {
       $('#input-expDate label').removeClass('active');
+      $('#expDate').removeAttr('placeholder', 'mm/yyyy');
+    }
+    if (!reg.exp.test(expDate)) {
+      $('#expDate').addClass('red');
+      validate.exp = false;
+    } else {
+      expValidation(expDate);
     }
   });
   $('#billZip').on('focus', function() {
@@ -80,8 +93,9 @@ jQuery(function($) {
     }
   });
   $('#form-card').on("submit", function(e) {
-    if (validate.name === true && validate.number === true && validate.zip === true) {
-      return true;
+    if (validate.name === true && validate.number === true && validate.exp === true && validate.zip === true) {
+      console.log("Success");
+      $(this).remove();
     }
     e.preventDefault();
   });
@@ -115,6 +129,28 @@ jQuery(function($) {
       validate.number = false;
       return cardType;
     }
+  }
+
+  // Expiration date validation
+  function expValidation(expDate) {
+    var today = new Date();
+    var exp = {
+      raw: expDate.split('/')
+    };
+    var year = (Number(exp.raw[1]) - today.getFullYear());
+    var month = (Number(exp.raw[0]) - today.getMonth() - 1);
+    if (month < 0 || month > 12) {
+      validate.exp = false;
+    }
+    if (year > 0) {
+      validate.exp = true;
+    } else if (year === 0 && month >= 0) {
+      validate.exp = true;
+    } else {
+      $('#expDate').addClass('red');
+      validate.exp = false;
+    }
+    console.log("Year: " + year + ", Month: " + month);
   }
 
   // Zip code validation
