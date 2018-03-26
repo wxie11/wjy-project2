@@ -11,7 +11,8 @@ $.noConflict();
 jQuery(function($) {
   // Define veriables
   var reg = {
-    name: /^[a-zA-Z\s]+$/
+    name: /^[a-zA-Z\s]+$/,
+    number: /^(\d{16})$/
   };
   var validate = {
     zip: false
@@ -35,10 +36,18 @@ jQuery(function($) {
   });
   $('#cardNumber').on('focus', function() {
     $('#input-cardNumber label').addClass('active');
+    $('#cardNumber').removeClass('red');
   });
   $('#cardNumber').on('blur', function() {
-    if ($('#cardNumber').val().length === 0) {
+    var cardNumber = $(this).val();
+    if (cardNumber.length === 0) {
       $('#input-cardNumber label').removeClass('active');
+    }
+    if (cardNumber.length !== 16 || !reg.number.test(cardNumber)) {
+      $('#cardNumber').addClass('red');
+    } else {
+      var cardType = cardValidation(cardNumber);
+      console.log(cardType);
     }
   });
   $('#expDate').on('focus', function() {
@@ -70,6 +79,32 @@ jQuery(function($) {
     }
     e.preventDefault();
   });
+
+  // Card number validation
+  function cardValidation(cardNumber) {
+    var cardType = null;
+    if (cardNumber.substring(0,1) === "3") {
+      cardType = "American Express";
+      return cardType;
+    }
+    if (cardNumber.substring(0,1) === "4") {
+      cardType = "Visa";
+      return cardType;
+    }
+    if (cardNumber.substring(0,1) === "5") {
+      cardType = "Mastercard";
+      return cardType;
+    }
+    if (cardNumber.substring(0,2) === "60" || cardNumber.substring(0,2) === "65") {
+      cardType = "Discover";
+      return cardType;
+    }
+    else {
+      $('#cardNumber').addClass('red');
+      cardType = "unknown";
+      return cardType;
+    }
+  }
 
   // Zip code validation
   function zipValidation(zipCode) {
