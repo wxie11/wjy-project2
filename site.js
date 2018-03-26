@@ -10,6 +10,9 @@ $.noConflict();
 // jQuery 3.x-style ready event and locally scoped $
 jQuery(function($) {
   // Define veriables
+  var reg = {
+    name: /^[a-zA-Z\s]+$/
+  };
   var validate = {
     zip: false
   };
@@ -20,10 +23,14 @@ jQuery(function($) {
   // Animation for payment/index.html
   $('#cardName').on('focus', function() {
     $('#input-cardName label').addClass('active');
+    $('#cardName').removeClass('red');
   });
   $('#cardName').on('blur', function() {
     if ($('#cardName').val().length === 0) {
       $('#input-cardName label').removeClass('active');
+    }
+    if (!reg.name.test($('#cardName').val())) {
+      $('#cardName').addClass('red');
     }
   });
   $('#cardNumber').on('focus', function() {
