@@ -53,7 +53,9 @@ footer {
 
 ul {
   padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   padding-left: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  padding-right: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 a:link {
@@ -66,6 +68,10 @@ a:visited {
 
 a ul:hover {
   background-color: rgba(0, 0, 0, 0.07);
+}
+
+img {
+  width: 100%;
 }
 
 #footer {
@@ -154,4 +160,5 @@ a ul:hover {
 @media screen and (min-width: 990px) {
 }
 @media screen and (min-width: 600px) {
+  /* jessica do css grids here!*/
 }
