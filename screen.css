@@ -74,15 +74,19 @@ img {
   width: 100%;
 }
 
+#banner {
+  background-image: url("medias/audio.jpg");
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 #footer {
   color: red;
   text-align: center;
-}
-
-#banner {
-  width: 100%;
-  background-color: black;
-  padding-bottom: 0.3055555556em; /* 5.5 / 18 = 0.3055555556 */
 }
 
 /* Payment */
@@ -155,10 +159,20 @@ img {
   display: flex;
   position: relative;
 }
+
+.myColors {
+  color: white;
+}
+
 @media screen and (min-width: 1400px) {
 }
 @media screen and (min-width: 990px) {
 }
 @media screen and (min-width: 600px) {
+  #banner {
+  padding-top: 100px;
+  padding-bottom: 300px;
+  background-attachment: fixed;
+}
   /* jessica do css grids here!*/
 }
