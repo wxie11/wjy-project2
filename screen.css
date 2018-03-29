@@ -45,6 +45,11 @@ h1 {
   font-size: 2.25em;
 }
 
+h2,
+p {
+  padding-bottom: 1.2222222222em;
+}
+
 footer {
   background-color: black;
   padding-bottom: 0.7em;
@@ -77,11 +82,23 @@ img {
 #banner {
   background-image: url("medias/audio.jpg");
   color: white;
-  padding-top: 100px;
-  padding-bottom: 200px;
+  padding-top: 6.11111111em; /* = 1.2222222222 x 5 */
+  padding-bottom: 7.33333333em; /* = 1.2222222222 x 6 */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+#button {
+  display: block;
+  width: 11.1111111111em;
+  background-color: red;
+  padding-bottom: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  padding-top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  text-align: center;
+  border-radius: 0.27777777778em;
+  color: white;
+  font-weight: bold;
 }
 
 #footer {
@@ -170,9 +187,8 @@ img {
 }
 @media screen and (min-width: 600px) {
   #banner {
-  padding-top: 100px;
-  padding-bottom: 300px;
-  background-attachment: fixed;
-}
+    padding-bottom: 12.2222222em;
+    background-attachment: fixed;
+  }
   /* jessica do css grids here!*/
 }
