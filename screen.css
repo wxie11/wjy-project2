@@ -167,8 +167,7 @@ img {
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   cursor: pointer;
 }
-#row1 input[type="checkbox"]:checked + label,
-#row2 input[type="checkbox"]:checked + label {
+.selected{
   background: #f44195;
   transition: 0.5s;
 }
