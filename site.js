@@ -63,7 +63,7 @@ jQuery(function($) {
   $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
   $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
 
-  $('.seat input,label').on('click', function(e) {
+  $('.seat input,.seat label').on('click', function(e) {
     var selected = [];
     var total = 0;
     $(this).toggleClass('selected');
@@ -170,9 +170,14 @@ jQuery(function($) {
     }
   });
   $('#form-card').on("submit", function(e) {
+    var time = Date.now();
+    var orderNumber = Math.round(time / 10000);
     if (formValidation() === true) {
       console.log("Success");
       $(this).remove();
+      $('#ticket').replaceWith('Your Confirmation');
+      $('.ticket-info.conformation').prepend('<li>Order number: ' + orderNumber + '</li>');
+      $('.ticket-info.conformation').append('<li class="barcode">' + orderNumber + '</li>');
     }
     e.preventDefault();
   });

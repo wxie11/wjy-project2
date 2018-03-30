@@ -79,6 +79,18 @@ img {
   width: 100%;
 }
 
+.red {
+  color: #E91E63;
+}
+.white {
+  color: white;
+}
+.barcode {
+  padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  font-size: 3.6666666667em; /* 66 / 18 = 3.6666666667 */
+  font-family: "Libre Barcode 39", cursive;
+}
+
 #banner {
   background-image: url("medias/audio.jpg");
   color: white;
@@ -108,6 +120,32 @@ img {
 #footer {
   color: red;
   text-align: center;
+}
+
+/* Seats */
+.row1, .row2 {
+  display: flex;
+  flex-direction: row;
+}
+.hidden {
+  display: none;
+}
+.individual {
+  display: inline-block;
+  width: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
+  height: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
+  text-align: center;
+  border: 1px solid #ddd;
+  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  cursor: pointer;
+}
+.selected {
+  background: #f44195;
+  transition: 0.5s;
+}
+.seat {
+  display: flex;
+  position: relative;
 }
 
 /* Payment */
@@ -152,39 +190,6 @@ img {
 .hasjs #input-expDate label.active,
 .hasjs #input-billZip label.active {
   top: -0.6111111111em; /* 11 / 18 = 0.6111111111 */
-}
-.red {
-  color: #E91E63;
-}
-
-/* Seats */
-.row1, .row2 {
-  display: flex;
-  flex-direction: row;
-}
-.hidden {
-  display: none;
-}
-.individual {
-  display: inline-block;
-  width: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
-  height: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
-  text-align: center;
-  border: 1px solid #ddd;
-  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  cursor: pointer;
-}
-.selected {
-  background: #f44195;
-  transition: 0.5s;
-}
-.seat {
-  display: flex;
-  position: relative;
-}
-
-.white {
-  color: white;
 }
 
 @media screen and (min-width: 600px) {
