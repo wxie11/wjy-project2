@@ -88,9 +88,6 @@ img {
   background-position: center;
   background-size: cover;
 }
-#intro {
-  width: 60%;
-}
 
 #button {
   display: block;
@@ -187,6 +184,9 @@ img {
   #banner {
     padding-bottom: 12.2222222222em; /* 220 / 18 = 12.2222222222 */
     background-attachment: fixed;
+  }
+  #intro {
+    width: 60%;
   }
   #eventlisting {
     display: grid;
