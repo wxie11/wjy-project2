@@ -79,6 +79,18 @@ img {
   width: 100%;
 }
 
+.red {
+  color: #E91E63;
+}
+.white {
+  color: white;
+}
+.barcode {
+  padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  font-size: 3.6666666667em; /* 66 / 18 = 3.6666666667 */
+  font-family: "Libre Barcode 39", cursive;
+}
+
 #banner {
   background-image: url("medias/audio.jpg");
   color: white;
@@ -110,50 +122,6 @@ img {
   text-align: center;
 }
 
-/* Payment */
-#form-card label {
-  display: block;
-  margin-bottom: 0;
-  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-}
-#form-card input {
-  width: 100%;
-  box-sizing: border-box;
-  display: block;
-  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
-  height: 2.4444444444em; /* 44 / 18 = 2.4444444444 */
-  border: 0;
-  font-family: inherit;
-  font-size: inherit;
-  margin-bottom: 0;
-}
-#form-card ul li {
-  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-}
-.hasjs #input-cardName,
-.hasjs #input-cardNumber,
-.hasjs #input-expDate,
-.hasjs #input-billZip {
-  position: relative;
-}
-.hasjs #input-cardName label,
-.hasjs #input-cardNumber label,
-.hasjs #input-expDate label,
-.hasjs #input-billZip label {
-  transition: top 0.6s;
-  top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
-  position: absolute;
-}
-.hasjs #input-cardName label.active,
-.hasjs #input-cardNumber label.active,
-.hasjs #input-expDate label.active,
-.hasjs #input-billZip label.active {
-  top: -0.6111111111em; /* 11 / 18 = 0.6111111111 */
-}
-.red {
-  color: #E91E63;
-}
-
 /* Seats */
 .row1, .row2 {
   display: flex;
@@ -180,8 +148,48 @@ img {
   position: relative;
 }
 
-.white {
-  color: white;
+/* Payment */
+#form-card label {
+  display: block;
+  margin-bottom: 0;
+  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+}
+#form-card input {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  height: 2.4444444444em; /* 44 / 18 = 2.4444444444 */
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 0;
+}
+#form-card ul li {
+  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+}
+.hasjs #input-email,
+.hasjs #input-cardName,
+.hasjs #input-cardNumber,
+.hasjs #input-expDate,
+.hasjs #input-billZip {
+  position: relative;
+}
+.hasjs #input-email label,
+.hasjs #input-cardName label,
+.hasjs #input-cardNumber label,
+.hasjs #input-expDate label,
+.hasjs #input-billZip label {
+  transition: top 0.6s;
+  top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  position: absolute;
+}
+.hasjs #input-email label.active,
+.hasjs #input-cardName label.active,
+.hasjs #input-cardNumber label.active,
+.hasjs #input-expDate label.active,
+.hasjs #input-billZip label.active {
+  top: -0.6111111111em; /* 11 / 18 = 0.6111111111 */
 }
 
 @media screen and (min-width: 600px) {
