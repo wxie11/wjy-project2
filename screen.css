@@ -98,6 +98,12 @@ img {
   color: red;
 }
 
+.time {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
 .barcode {
   padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   font-size: 3.6666666667em; /* 66 / 18 = 3.6666666667 */
