@@ -23,6 +23,7 @@ Ready to Use:
 html {
   font-size: 1.125em; /* 18 / 16 = 1.125 */
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -82,9 +83,15 @@ img {
 .red {
   color: #E91E63;
 }
+
 .white {
   color: white;
 }
+
+.colorRed {
+  color: red;
+}
+
 .barcode {
   padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   font-size: 3.6666666667em; /* 66 / 18 = 3.6666666667 */
