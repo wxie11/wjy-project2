@@ -24,10 +24,11 @@ html {
   font-size: 1.125em; /* 18 / 16 = 1.125 */
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #F0F0F0;
 }
 
 header {
@@ -64,10 +65,7 @@ footer {
 }
 
 ul {
-  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding-left: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding-right: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  padding: 1.2222222222em;
 }
 
 a:link {
@@ -80,6 +78,12 @@ a:visited {
 
 a ul:hover {
   background-color: rgba(0, 0, 0, 0.07);
+}
+
+#home ul {
+  background-color: white;
+  margin: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  padding: 0;
 }
 
 img {
