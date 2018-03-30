@@ -21,9 +21,62 @@ jQuery(function($) {
     exp: false,
     zip: false
   };
+  var loadFX = function() {
+    $('html').addClass('fx');
+  }
+  setTimeout(loadFX, 500);
 
   $('html').removeClass('nojs');
   $('html').addClass('hasjs');
+
+  // Cookies
+  $("#event1").click(function() {
+    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
+    Cookies.set('provider', 'ITM Students')
+  });
+  $("#event2").click(function() {
+    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
+    Cookies.set('provider', 'ITM Students')
+  });
+  $("#event3").click(function() {
+    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
+    Cookies.set('provider', 'ITM Students')
+  });
+  $("#event4").click(function() {
+    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
+    Cookies.set('provider', 'ITM Students')
+  });
+  $("#event5").click(function() {
+    Cookies.set('event', 'THINK APIs!');
+    Cookies.set('provider', 'Professor Karl Stolley')
+  });
+  $("#event6").click(function() {
+    Cookies.set('event', 'Git your Hub');
+    Cookies.set('provider', 'Yifan Yao')
+  });
+
+  console.log(Cookies.get());
+
+  // Seat Selection
+  $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
+  $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
+
+  $('.seat input,label').on('click', function(e) {
+    var selected = [];
+    var total = 0;
+    $(this).toggleClass('selected');
+    $('.selected','.rows').each(function(){
+      var seat = $(this).attr('for');
+      // Add the current seat in the set to the `selected` array
+      selected.push(seat);
+    });
+    console.log(selected.length);
+    $('#summary').empty();
+    $('#summary').append(selected.join(","));
+    $('#money').empty();
+    $('#money').append('$' + selected.length * 12);
+    e.preventDefault();
+  });
 
   // Animation for payment/index.html
   $('#cardName').on('focus', function() {
@@ -122,8 +175,7 @@ jQuery(function($) {
       cardType = "Discover";
       validate.number = true;
       return cardType;
-    }
-    else {
+    } else {
       $('#cardNumber').addClass('red');
       cardType = "unknown";
       validate.number = false;
