@@ -23,7 +23,7 @@ Ready to Use:
 html {
   font-size: 1.125em; /* 18 / 16 = 1.125 */
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+  font-family: "Titillium Web", sans-serif, Helvetica, Arial;
   background-color: black;
 }
 
@@ -226,8 +226,19 @@ img {
   #eventlisting {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 1.33333em;
-    padding-bottom: 1.2222222222em;
+    grid-column-gap: 1.3333333333em; /* 22 / 18 = 1.3333333333 */
+    padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  }
+  #payment-container {
+    display: flex;
+  }
+  #conformation {
+    width: 50%;
+    align-items: left;
+  }
+  #form-content {
+    width: 50%;
+    align-items: right;
   }
 }
 @media screen and (min-width: 990px) {
@@ -235,7 +246,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1.33333em;
-    padding-bottom: 1.2222222222em;
+    padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   }
 }
 @media screen and (min-width: 1400px) {
