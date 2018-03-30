@@ -174,7 +174,7 @@ jQuery(function($) {
     var orderNumber = Math.round(time / 10000);
     if (formValidation() === true) {
       console.log("Success");
-      $(this).remove();
+      $('#form-content').remove();
       $('#ticket').replaceWith('Your Confirmation');
       $('.ticket-info.conformation').prepend('<li>Order number: ' + orderNumber + '</li>');
       $('.ticket-info.conformation').append('<li class="barcode">' + orderNumber + '</li>');

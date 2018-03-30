@@ -229,6 +229,17 @@ img {
     grid-column-gap: 1.3333333333em; /* 22 / 18 = 1.3333333333 */
     padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   }
+  #payment-container {
+    display: flex;
+  }
+  #conformation {
+    width: 50%;
+    align-items: left;
+  }
+  #form-content {
+    width: 50%;
+    align-items: right;
+  }
 }
 @media screen and (min-width: 990px) {
   #eventlisting {

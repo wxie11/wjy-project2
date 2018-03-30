@@ -14,40 +14,43 @@
   <header>
     <h1>IIT<span class="white">TALK</span></h1>
   </header>
-  <section>
-    <h2 id="ticket">Your Ticket(s)</h2>
-    <ol class="ticket-info conformation">
-    </ol>
-  </section>
-  <main id="content">
-    <form action="#null" method="post" id="form-card" novalidate>
-      <ul>
-        <li id="input-email">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="text" />
-        </li>
-        <li id="input-cardName">
-          <label for="cardName">Cardholder Name</label>
-          <input id="cardName" name="cardName" type="text" />
-        </li>
-        <li id="input-cardNumber">
-          <label for="cardNumber">Card Number</label>
-          <input id="cardNumber" name="cardNumber" type="text" />
-        </li>
-        <li id="input-expDate">
-          <label for="expDate">Expiration Date</label>
-          <input id="expDate" name="expDate" type="text" />
-        </li>
-        <li id="input-billZip">
-          <label for="billZip">Billing Zip Code</label>
-          <input id="billZip" name="billZip" type="text" pattern="[0-9]*" />
-        </li>
-        <li>
-          <input type="submit" id="submit" value="Order Now" />
-        </li>
-      </ul>
-    </form>
-  </main>
+  <div id="payment-container">
+    <section id="conformation">
+      <h2 id="ticket">Your Ticket(s)</h2>
+      <ol class="ticket-info conformation">
+      </ol>
+    </section>
+    <main id="form-content">
+      <h2>Complete Your Order</h2>
+      <form action="#null" method="post" id="form-card" novalidate>
+        <ul>
+          <li id="input-email">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" />
+          </li>
+          <li id="input-cardName">
+            <label for="cardName">Cardholder Name</label>
+            <input id="cardName" name="cardName" type="text" />
+          </li>
+          <li id="input-cardNumber">
+            <label for="cardNumber">Card Number</label>
+            <input id="cardNumber" name="cardNumber" type="text" />
+          </li>
+          <li id="input-expDate">
+            <label for="expDate">Expiration Date</label>
+            <input id="expDate" name="expDate" type="text" />
+          </li>
+          <li id="input-billZip">
+            <label for="billZip">Billing Zip Code</label>
+            <input id="billZip" name="billZip" type="text" pattern="[0-9]*" />
+          </li>
+          <li>
+            <input type="submit" id="submit" value="Order Now" />
+          </li>
+        </ul>
+      </form>
+    </main>
+  </div>
   <footer>
     <p id="footer">2018 &copy; Copyright IIT<span class="white">TALK</span></p>
   </footer>
