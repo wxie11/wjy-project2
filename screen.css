@@ -88,6 +88,9 @@ img {
   background-position: center;
   background-size: cover;
 }
+#intro {
+  width: 60%;
+}
 
 #button {
   display: block;
