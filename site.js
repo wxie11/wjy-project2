@@ -42,7 +42,7 @@ jQuery(function($) {
   });
   $("#event3").click(function() {
     Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students');
+    Cookies.set('provider', 'Wenwen Xie');
   });
   $("#event4").click(function() {
     Cookies.set('event', 'Why choose Information Technology Management at IIT?');

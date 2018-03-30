@@ -46,7 +46,13 @@ h1 {
   font-size: 2.25em;
 }
 
-h2,
+h2 {
+  font-weight: bold;
+  font-size: 1.5em; /* 27 / 18 = 1.5 */
+  line-height: 1.2222222222em; /* 33 / 27 = 1.222 */
+  padding-bottom: 0.407407407em; /* 11 / 27 */
+}
+
 p {
   padding-bottom: 1.2222222222em;
 }
@@ -92,6 +98,12 @@ img {
   color: red;
 }
 
+.time {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
 .barcode {
   padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   font-size: 3.6666666667em; /* 66 / 18 = 3.6666666667 */
@@ -102,7 +114,7 @@ img {
   background-image: url("medias/audio.jpg");
   color: white;
   padding-top: 6.1111111111em; /* 110 / 18 = 6.1111111111 */
-  padding-bottom: 7.3333333333em; /* 132 / 18 = 7.3333333333 x 6 */
+  padding-bottom: 7.3333333333em; /* 132 / 18 = 7.3333333333 */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
