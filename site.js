@@ -11,11 +11,13 @@ $.noConflict();
 jQuery(function($) {
   // Define veriables
   var reg = {
+    email: /^([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
     name: /^[a-zA-Z\s]+$/,
     number: /^(\d{16})$/,
     exp: /^\d{2}\/\d{4}$/
   };
   var validate = {
+    email: false,
     name: false,
     number: false,
     exp: false,
@@ -23,7 +25,7 @@ jQuery(function($) {
   };
   var loadFX = function() {
     $('html').addClass('fx');
-  }
+  };
   setTimeout(loadFX, 500);
 
   $('html').removeClass('nojs');
@@ -32,27 +34,27 @@ jQuery(function($) {
   // Cookies
   $("#event1").click(function() {
     Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students')
+    Cookies.set('provider', 'ITM Students');
   });
   $("#event2").click(function() {
     Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students')
+    Cookies.set('provider', 'ITM Students');
   });
   $("#event3").click(function() {
     Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students')
+    Cookies.set('provider', 'ITM Students');
   });
   $("#event4").click(function() {
     Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students')
+    Cookies.set('provider', 'ITM Students');
   });
   $("#event5").click(function() {
     Cookies.set('event', 'THINK APIs!');
-    Cookies.set('provider', 'Professor Karl Stolley')
+    Cookies.set('provider', 'Professor Karl Stolley');
   });
   $("#event6").click(function() {
     Cookies.set('event', 'Git your Hub');
-    Cookies.set('provider', 'Yifan Yao')
+    Cookies.set('provider', 'Yifan Yao');
   });
 
   console.log(Cookies.get());
@@ -65,7 +67,7 @@ jQuery(function($) {
     var selected = [];
     var total = 0;
     $(this).toggleClass('selected');
-    $('.selected','.rows').each(function(){
+    $('.selected', '.rows').each(function() {
       var seat = $(this).attr('for');
       // Add the current seat in the set to the `selected` array
       selected.push(seat);
@@ -74,11 +76,33 @@ jQuery(function($) {
     $('#summary').empty();
     $('#summary').append(selected.join(","));
     $('#money').empty();
-    $('#money').append('$' + selected.length * 12);
+    total = selected.length * 12;
+    $('#money').append('$' + total);
+    Cookies.set('seats', selected.join(","));
+    Cookies.set('amount', total);
     e.preventDefault();
   });
 
+  // Get seat and amounts
+  $('.ticket-info.conformation').append('<li>Seat: ' + Cookies.get('seats') + '</li>');
+  $('.ticket-info.conformation').append('<li>Amount: $' + Cookies.get('amount') + '</li>');
+
   // Animation for payment/index.html
+  $('#email').on('focus', function() {
+    $('#input-email label').addClass('active');
+    $('#email').removeClass('red');
+  });
+  $('#email').on('blur', function() {
+    if ($('#email').val().length === 0) {
+      $('#input-email label').removeClass('active');
+    }
+    if (!reg.email.test($('#email').val())) {
+      $('#email').addClass('red');
+      validate.email = false;
+    } else {
+      validate.email = true;
+    }
+  });
   $('#cardName').on('focus', function() {
     $('#input-cardName label').addClass('active');
     $('#cardName').removeClass('red');
@@ -146,7 +170,7 @@ jQuery(function($) {
     }
   });
   $('#form-card').on("submit", function(e) {
-    if (validate.name === true && validate.number === true && validate.exp === true && validate.zip === true) {
+    if (formValidation() === true) {
       console.log("Success");
       $(this).remove();
     }
@@ -220,6 +244,19 @@ jQuery(function($) {
         }
       }
     });
+  }
+
+  // From validateion
+  function formValidation() {
+    if (validate.email === true &&
+      validate.name === true &&
+      validate.number === true &&
+      validate.exp === true &&
+      validate.zip === true) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 });

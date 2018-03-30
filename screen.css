@@ -130,12 +130,14 @@ img {
 #form-card ul li {
   padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
+.hasjs #input-email,
 .hasjs #input-cardName,
 .hasjs #input-cardNumber,
 .hasjs #input-expDate,
 .hasjs #input-billZip {
   position: relative;
 }
+.hasjs #input-email label,
 .hasjs #input-cardName label,
 .hasjs #input-cardNumber label,
 .hasjs #input-expDate label,
@@ -144,6 +146,7 @@ img {
   top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
   position: absolute;
 }
+.hasjs #input-email label.active,
 .hasjs #input-cardName label.active,
 .hasjs #input-cardNumber label.active,
 .hasjs #input-expDate label.active,
