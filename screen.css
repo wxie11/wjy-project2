@@ -64,10 +64,8 @@ footer {
 }
 
 ul {
-  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding-left: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding-right: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  background-color: white;
+  margin: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 a:link {
