@@ -157,6 +157,16 @@ img {
   display: flex;
   flex-direction: row;
 }
+figure {
+  width: 18.861em;
+  margin: 0 auto;
+}
+figure h2 {
+  margin: 0;
+  padding: 0;
+  background: red;
+  text-align : center;
+}
 .hidden {
   display: none;
 }
@@ -165,7 +175,7 @@ img {
   width: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
   height: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid red;
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   cursor: pointer;
 }
