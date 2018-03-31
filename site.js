@@ -182,6 +182,17 @@ jQuery(function($) {
     e.preventDefault();
   });
 
+  //animation for html
+
+  $('#intro').css('display', 'none');
+  $('#intro').fadeIn(5000);
+  $('#spreadinfo').css('display', 'none');
+  $('#spreadinfo').fadeIn(3000);
+  $('#button').css('display', 'none');
+  $('#button').fadeIn(3000);
+
+
+
   // Card number validation
   function cardValidation(cardNumber) {
     var cardType = null;
