@@ -157,11 +157,11 @@ img {
   display: flex;
   flex-direction: row;
 }
-figure {
+.rows {
   width: 18.861em;
   margin: 0 auto;
 }
-figure h2 {
+.rows h2 {
   margin: 0;
   padding: 0;
   background: red;
