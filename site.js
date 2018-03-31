@@ -188,6 +188,9 @@ jQuery(function($) {
   $('#intro').fadeIn(5000);
   $('#spreadinfo').css('display', 'none');
   $('#spreadinfo').fadeIn(3000);
+  $('#button').css('display', 'none');
+  $('#button').fadeIn(3000);
+
 
 
   // Card number validation
