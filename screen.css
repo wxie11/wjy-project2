@@ -70,6 +70,7 @@ ul {
 
 a:link {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -77,7 +78,8 @@ a:visited {
 }
 
 a ul:hover {
-  background-color: rgba(0, 0, 0, 0.07);
+  /*background-color: rgba(0, 0, 0, 0.07);*/
+  color: red;
 }
 
 #home ul {
@@ -136,6 +138,11 @@ img {
   font-weight: bold;
 }
 
+.submitButton input {
+  background-color: red;
+  color: white;
+}
+
 .ticket-info li:last-child {
   padding-bottom: 1.8333333333em; /* 33 / 18 = 1.8333333333 */
 }
@@ -177,6 +184,7 @@ img {
   margin-bottom: 0;
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
+.submitButton input,
 #form-card input {
   width: 100%;
   box-sizing: border-box;

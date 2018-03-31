@@ -5,6 +5,7 @@
   <title>Payment</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet" />
   <link rel="stylesheet" media="screen" href="../screen.css" />
   <link rel="stylesheet" href="//basehold.it/22" />
@@ -12,7 +13,9 @@
 
 <body>
   <header>
-    <h1>IIT<span class="white">TALK</span></h1>
+    <a href="../index.html">
+      <h1>IIT<span class="white">TALK</span></h1>
+    </a>
   </header>
   <div id="payment-container">
     <section id="conformation">
@@ -44,7 +47,7 @@
             <label for="billZip">Billing Zip Code</label>
             <input id="billZip" name="billZip" type="text" pattern="[0-9]*" />
           </li>
-          <li>
+          <li class="submitButton">
             <input type="submit" id="submit" value="Order Now" />
           </li>
         </ul>
