@@ -59,7 +59,7 @@ p {
 }
 
 #seatdirections {
-  padding-top: .6666666666em;
+  padding-top: 0.6666666666em;
 }
 
 footer {
@@ -169,7 +169,7 @@ img {
   margin: 0;
   padding: 0;
   background: red;
-  text-align : center;
+  text-align: center;
 }
 .hidden {
   display: none;
