@@ -68,10 +68,6 @@ footer {
   padding-top: 0.7em;
 }
 
-ul {
-  padding: 1.2222222222em;
-}
-
 a:link {
   text-decoration: none;
   color: black;
@@ -147,9 +143,14 @@ img {
   margin-bottom: 1.2222222222em;
 }
 
-#orderDetail {
+#orderDetail,
+#conformation {
   background-color: white;
   margin: 1.2222222222em;
+}
+
+#form-content {
+  margin-top: 1.2222222222em;
 }
 
 .total {
@@ -268,17 +269,6 @@ img {
     grid-column-gap: 1.3333333333em; /* 22 / 18 = 1.3333333333 */
     padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   }
-  #payment-container {
-    display: flex;
-  }
-  #conformation {
-    width: 50%;
-    align-items: right;
-  }
-  #form-content {
-    width: 50%;
-    align-items: left;
-  }
 }
 @media screen and (min-width: 990px) {
   #eventlisting {
@@ -298,6 +288,18 @@ img {
   #orderDetail {
     width: 50%;
     align-items: right;
+  }
+  #payment-container {
+    display: flex;
+    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
+  }
+  #conformation {
+    width: 50%;
+    align-items: right;
+  }
+  #form-content {
+    width: 50%;
+    align-items: left;
   }
 }
 @media screen and (min-width: 1400px) {
