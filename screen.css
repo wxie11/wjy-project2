@@ -142,9 +142,24 @@ img {
   font-weight: bold;
 }
 
+#seat-container {
+  margin-top: 1.2222222222em;
+  margin-bottom: 1.2222222222em;
+}
+
+#orderDetail {
+  background-color: white;
+  margin: 1.2222222222em;
+}
+
+.total {
+  font-weight: bold;
+}
+
 .submitButton input {
   background-color: red;
   color: white;
+  cursor: pointer;
 }
 
 .ticket-info li:last-child {
@@ -168,7 +183,8 @@ img {
 .rows h2 {
   margin: 0;
   padding: 0;
-  background: red;
+  background: black;
+  color: white;
   text-align: center;
 }
 .hidden {
@@ -179,12 +195,13 @@ img {
   width: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
   height: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
   text-align: center;
-  border: 1px solid red;
+  border: 0.05em solid black;
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   cursor: pointer;
 }
 .selected {
-  background: #f44195;
+  background: red;
+  color: white;
   transition: 0.5s;
 }
 .seat {
@@ -269,6 +286,18 @@ img {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1.33333em;
     padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  }
+  #seat #content {
+    display: flex;
+    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
+  }
+  #seat-container {
+    width: 50%;
+    align-items: left;
+  }
+  #orderDetail {
+    width: 50%;
+    align-items: right;
   }
 }
 @media screen and (min-width: 1400px) {
