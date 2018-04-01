@@ -33,20 +33,20 @@ jQuery(function($) {
 
   // Cookies
   $("#event1").click(function() {
-    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students');
+    Cookies.set('event', 'Strategies for Success');
+    Cookies.set('provider', 'Wenzhao Zhang');
   });
   $("#event2").click(function() {
-    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students');
+    Cookies.set('event', 'The Challenge of Change');
+    Cookies.set('provider', 'Jessica DeJesus');
   });
   $("#event3").click(function() {
-    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
+    Cookies.set('event', 'Why choose Information Technology Management?');
     Cookies.set('provider', 'Wenwen Xie');
   });
   $("#event4").click(function() {
-    Cookies.set('event', 'Why choose Information Technology Management at IIT?');
-    Cookies.set('provider', 'ITM Students');
+    Cookies.set('event', 'Innovate, Integrate, Motivate');
+    Cookies.set('provider', 'Jia Yu Huang');
   });
   $("#event5").click(function() {
     Cookies.set('event', 'THINK APIs!');
