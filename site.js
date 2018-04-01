@@ -84,8 +84,8 @@ jQuery(function($) {
   });
 
   // Get seat and amounts
-  $('.ticket-info.conformation').append('<li>Seat: ' + Cookies.get('seats') + '</li>');
-  $('.ticket-info.conformation').append('<li>Amount: $' + Cookies.get('amount') + '</li>');
+  $('.ticket-info.conformation').append('<li>Seat(s): ' + Cookies.get('seats') + '</li>');
+  $('.ticket-info.conformation').append('<li class="total">Total: $' + Cookies.get('amount') + '</li>');
 
   // Animation for payment/index.html
   $('#email').on('focus', function() {

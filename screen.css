@@ -273,11 +273,11 @@ img {
   }
   #conformation {
     width: 50%;
-    align-items: left;
+    align-items: right;
   }
   #form-content {
     width: 50%;
-    align-items: right;
+    align-items: left;
   }
 }
 @media screen and (min-width: 990px) {
