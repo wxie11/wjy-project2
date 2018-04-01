@@ -58,6 +58,10 @@ p {
   padding-bottom: 1.2222222222em;
 }
 
+#seatdirections {
+  padding-top: .6666666666em;
+}
+
 footer {
   background-color: black;
   padding-bottom: 0.7em;
