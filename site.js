@@ -13,8 +13,8 @@ jQuery(function($) {
   var reg = {
     email: /.+@.+/,
     name: /^[a-zA-Z\s]+$/,
-    number: /^(\d{16})$/,
-    exp: /^\d{2}\/\d{4}$/
+    number: /^\d{16}$/,
+    exp: /^\d{4}$/
   };
   var validate = {
     email: false,
@@ -140,14 +140,14 @@ jQuery(function($) {
   });
   $('#expDate').on('focus', function() {
     $('#input-expDate label').addClass('active');
-    $('#expDate').attr('placeholder', 'mm/yyyy');
+    $('#expDate').attr('placeholder', 'mmyy');
     $('#expDate').removeClass('red');
   });
   $('#expDate').on('blur', function() {
     var expDate = $(this).val();
     if (expDate.length === 0) {
       $('#input-expDate label').removeClass('active');
-      $('#expDate').removeAttr('placeholder', 'mm/yyyy');
+      $('#expDate').removeAttr('placeholder', 'mmyy');
     }
     if (!reg.exp.test(expDate)) {
       $('#expDate').addClass('red');
@@ -230,10 +230,11 @@ jQuery(function($) {
   function expValidation(expDate) {
     var today = new Date();
     var exp = {
-      raw: expDate.split('/')
+      month: expDate.substring(0, 2),
+      year: expDate.substring(2, 4)
     };
-    var year = (Number(exp.raw[1]) - today.getFullYear());
-    var month = (Number(exp.raw[0]) - today.getMonth() - 1);
+    var month = (Number(exp.month) - today.getMonth() - 1);
+    var year = (Number(exp.year) - today.getYear() + 100);
     if (month < 0 || month > 12) {
       validate.exp = false;
     }
@@ -245,7 +246,7 @@ jQuery(function($) {
       $('#expDate').addClass('red');
       validate.exp = false;
     }
-    console.log("Year: " + year + ", Month: " + month);
+    console.log("Card expired in " + year + " year " + month + " month.");
   }
 
   // Zip code validation
