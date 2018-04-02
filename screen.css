@@ -85,11 +85,10 @@ a:visited {
 }
 
 a ul:hover {
-  /*background-color: rgba(0, 0, 0, 0.07);*/
-  color: red;
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
-#home ul {
+.hovereffect {
   background-color: white;
   margin: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   padding: 0;
@@ -289,11 +288,11 @@ img {
     padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
   }
   #seat-container {
-    width: 50%;
+    width: 60%;
     align-items: left;
   }
   #orderDetail {
-    width: 50%;
+    width: 40%;
     align-items: right;
   }
   #payment-container {
@@ -301,13 +300,14 @@ img {
     padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
   }
   #conformation {
-    width: 50%;
+    width: 30%;
     align-items: right;
   }
   #form-content {
-    width: 50%;
+    width: 70%;
     align-items: left;
   }
 }
 @media screen and (min-width: 1400px) {
+
 }
