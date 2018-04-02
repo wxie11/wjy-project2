@@ -54,6 +54,13 @@ h2 {
   padding-bottom: 0.407407407em; /* 11 / 27 */
 }
 
+h3 {
+  font-weight: bold;
+  font-size: 1.3333333333em; /* 24 / 18 = 1.3333333333 */
+  line-height: 1.375em; /* 33 / 24 = 1.375 */
+  padding-bottom: 0.9166666667em; /* 22 / 24 */
+}
+
 p {
   padding-bottom: 1.2222222222em;
 }

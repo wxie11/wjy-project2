@@ -133,6 +133,8 @@ jQuery(function($) {
       $('#cardNumber').addClass('red');
     } else {
       cardType = cardValidation(cardNumber);
+      Cookies.set('cardType', cardType);
+      Cookies.set('lastFourCard', cardNumber.substring(12,16));
       console.log(cardType);
     }
   });
@@ -175,8 +177,9 @@ jQuery(function($) {
     if (formValidation() === true) {
       console.log("Success");
       $('#form-content').remove();
-      $('#ticket').replaceWith('Your Confirmation');
-      $('.ticket-info.conformation').prepend('<li>Order number: ' + orderNumber + '</li>');
+      $('#ticket').replaceWith('<h2>Your Confirmation</h2>');
+      $('.ticket-info.conformation').prepend('<li><h3>Order number: ' + orderNumber + '</h3></li>');
+      $('.ticket-info.conformation').append('<li>Paid By: ' + Cookies.get('cardType') + ' ' + Cookies.get('lastFourCard') + '</li>');
       $('.ticket-info.conformation').append('<li class="barcode">' + orderNumber + '</li>');
     }
     e.preventDefault();
