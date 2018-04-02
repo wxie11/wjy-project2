@@ -11,7 +11,7 @@ $.noConflict();
 jQuery(function($) {
   // Define veriables
   var reg = {
-    email: /^([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
+    email: /.+@.+/,
     name: /^[a-zA-Z\s]+$/,
     number: /^(\d{16})$/,
     exp: /^\d{2}\/\d{4}$/
@@ -41,7 +41,7 @@ jQuery(function($) {
     Cookies.set('provider', 'Jessica DeJesus');
   });
   $("#event3").click(function() {
-    Cookies.set('event', 'Why choose Information Technology Management?');
+    Cookies.set('event', 'Why choose ITM?');
     Cookies.set('provider', 'Wenwen Xie');
   });
   $("#event4").click(function() {
