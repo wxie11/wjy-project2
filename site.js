@@ -62,6 +62,7 @@ jQuery(function($) {
   // Seat Selection
   $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
   $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
+  $('input[type="checkbox"]').toggleClass('hidden');
 
   $('.seat input,.seat label').on('click', function(e) {
     var selected = [];
@@ -81,6 +82,18 @@ jQuery(function($) {
     Cookies.set('seats', selected.join(","));
     Cookies.set('amount', total);
     e.preventDefault();
+  });
+
+  $('.submission').on('click', function(e) {
+    if($('.selected').length < 1) {
+      $('.submitButton').append('<p>Please choose at least one seat</p>');
+      console.log($('.selected').length);
+
+      return false;
+      }
+      else {
+        return true;
+      }
   });
 
   // Get seat and amounts
