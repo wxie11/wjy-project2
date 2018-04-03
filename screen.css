@@ -166,6 +166,10 @@ img {
   cursor: pointer;
 }
 
+#oneSeat {
+  color: red;
+}
+
 .ticket-info li:last-child {
   padding-bottom: 1.8333333333em; /* 33 / 18 = 1.8333333333 */
 }

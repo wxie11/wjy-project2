@@ -86,7 +86,8 @@ jQuery(function($) {
 
   $('.submission').on('click', function(e) {
     if($('.selected').length < 1) {
-      $('.submitButton').append('<p>Please choose at least one seat</p>');
+      $('#oneSeat').remove();
+      $('.submitButton').append('<p id="oneSeat">Please choose at least one seat.</p>');
       console.log($('.selected').length);
 
       return false;
