@@ -103,7 +103,7 @@ img {
   color: white;
 }
 
-.colorRed {
+.color-red {
   color: red;
 }
 
@@ -146,7 +146,7 @@ img {
   margin-bottom: 1.2222222222em;
 }
 
-#orderDetail,
+#order-detail,
 #conformation {
   background-color: white;
   margin: 1.2222222222em;
@@ -160,7 +160,7 @@ img {
   font-weight: bold;
 }
 
-.submitButton input {
+.submit-button input {
   background-color: red;
   color: white;
   cursor: pointer;
@@ -223,7 +223,7 @@ img {
   margin-bottom: 0;
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
-.submitButton input,
+.submit-button input,
 #form-card input {
   width: 100%;
   box-sizing: border-box;
@@ -239,26 +239,26 @@ img {
   padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 .hasjs #input-email,
-.hasjs #input-cardName,
-.hasjs #input-cardNumber,
-.hasjs #input-expDate,
-.hasjs #input-billZip {
+.hasjs #input-cardname,
+.hasjs #input-cardnumber,
+.hasjs #input-expdate,
+.hasjs #input-billzip {
   position: relative;
 }
 .hasjs #input-email label,
-.hasjs #input-cardName label,
-.hasjs #input-cardNumber label,
-.hasjs #input-expDate label,
-.hasjs #input-billZip label {
+.hasjs #input-cardname label,
+.hasjs #input-cardnumber label,
+.hasjs #input-expdate label,
+.hasjs #input-billzip label {
   transition: top 0.6s;
   top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
   position: absolute;
 }
 .hasjs #input-email label.active,
-.hasjs #input-cardName label.active,
-.hasjs #input-cardNumber label.active,
-.hasjs #input-expDate label.active,
-.hasjs #input-billZip label.active {
+.hasjs #input-cardname label.active,
+.hasjs #input-cardnumber label.active,
+.hasjs #input-expdate label.active,
+.hasjs #input-billzip label.active {
   top: -0.6111111111em; /* 11 / 18 = 0.6111111111 */
 }
 
@@ -292,7 +292,7 @@ img {
     width: 60%;
     align-items: left;
   }
-  #orderDetail {
+  #order-detail {
     width: 40%;
     align-items: right;
   }
