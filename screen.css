@@ -147,6 +147,7 @@ img {
 
 #back {
   padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  margin-left: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 #previouspage {
@@ -312,7 +313,6 @@ img {
   }
   #seat #content {
     display: flex;
-    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
   }
   #seat-container {
     width: 60%;
@@ -324,7 +324,6 @@ img {
   }
   #payment-container {
     display: flex;
-    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
   }
   #conformation {
     width: 30%;
@@ -336,15 +335,19 @@ img {
   }
 }
 @media screen and (min-width: 1400px) {
-
   #banner {
     padding-bottom: 15.8888888889em; /* 286 / 18 = 15.8888888889 */
     padding-top: 9.77777777778em; /* 176 / 18 = 9.77777777778 */
   }
-
   #event {
     padding-left: 15%;
     padding-right: 15%;
+  }
+  #seat #content {
+    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
+  }
+  #payment-container {
+    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
   }
 
 }
