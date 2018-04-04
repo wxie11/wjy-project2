@@ -96,15 +96,11 @@ img {
 }
 
 .red {
-  color: #E91E63;
+  color: red;
 }
 
 .white {
   color: white;
-}
-
-.color-red {
-  color: red;
 }
 
 .time {

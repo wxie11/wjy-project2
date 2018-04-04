@@ -21,6 +21,13 @@ jQuery(function($) {
     number: /^\d{16}$/,
     exp: /^\d{4}$/
   };
+  var creditCard = {
+    name: null,
+    number: null,
+    exp: null,
+    zip: null,
+    type: null,
+  }
   var validate = {
     email: false,
     name: false,
@@ -68,7 +75,6 @@ jQuery(function($) {
       // Add the current seat in the set to the `selected` array
       selected.push(seat);
     });
-    console.log(selected.length);
     $('#summary').empty();
     $('#summary').append(selected.join(","));
     $('#money').empty();
@@ -83,8 +89,6 @@ jQuery(function($) {
     if($('.selected').length < 1) {
       $('#oneSeat').remove();
       $('.submit-button').append('<p id="oneSeat">Please choose at least one seat.</p>');
-      console.log($('.selected').length);
-
       return false;
     }
     else {
@@ -120,13 +124,14 @@ jQuery(function($) {
     $('#cardname').removeClass('red');
   });
   $('#cardname').on('blur', function() {
-    if ($('#cardname').val().length === 0) {
+    creditCard.name = $('#cardname').val();
+    if (creditCard.name.length === 0) {
       $('#input-cardname label').removeClass('active');
       $('#input-cardname label').addClass('red');
     } else {
       $('#input-cardname label').removeClass('red');
     }
-    if (!reg.name.test($('#cardname').val())) {
+    if (!reg.name.test(creditCard.name)) {
       $('#cardname').addClass('red');
       validate.name = false;
     } else {
@@ -138,22 +143,20 @@ jQuery(function($) {
     $('#cardnumber').removeClass('red');
   });
   $('#cardnumber').on('blur', function() {
-    var cardNumber = $(this).val();
-    var cardType = null;
-    if (cardNumber.length === 0) {
+    creditCard.number = $(this).val();
+    if (creditCard.number.length === 0) {
       $('#input-cardnumber label').removeClass('active');
       $('#cardnumber').removeClass('red');
       $('#input-cardnumber label').addClass('red');
     } else {
       $('#input-cardnumber label').removeClass('red');
     }
-    if (!reg.number.test(cardNumber)) {
+    if (!reg.number.test(creditCard.number)) {
       $('#cardnumber').addClass('red');
     } else {
-      cardType = cardValidation(cardNumber);
-      Cookies.set('cardType', cardType);
-      Cookies.set('lastFourCard', cardNumber.substring(12, 16));
-      console.log(cardType);
+      creditCard.cardType = cardValidation(creditCard.number);
+      Cookies.set('cardType', creditCard.cardType);
+      Cookies.set('lastFourCard', creditCard.number.substring(12, 16));
     }
   });
   $('#expdate').on('focus', function() {
@@ -162,19 +165,19 @@ jQuery(function($) {
     $('#expdate').removeClass('red');
   });
   $('#expdate').on('blur', function() {
-    var expdate = $(this).val();
-    if (expdate.length === 0) {
+    creditCard.exp = $(this).val();
+    if (creditCard.exp.length === 0) {
       $('#input-expdate label').removeClass('active');
       $('#expdate').removeAttr('placeholder', 'mmyy');
       $('#input-expdate label').addClass('red');
     } else {
       $('#input-expdate label').removeClass('red');
     }
-    if (!reg.exp.test(expdate)) {
+    if (!reg.exp.test(creditCard.exp)) {
       $('#expdate').addClass('red');
       validate.exp = false;
     } else {
-      expValidation(expdate);
+      expValidation(creditCard.exp);
     }
   });
   $('#billzip').on('focus', function() {
@@ -182,16 +185,16 @@ jQuery(function($) {
     $('#billzip').removeClass('red');
   });
   $('#billzip').on('blur', function() {
-    var zipCode = $(this).val();
-    if (zipCode.length === 0) {
+    creditCard.zip = $(this).val();
+    if (creditCard.zip.length === 0) {
       $('#input-billzip label').removeClass('active');
       $('#input-billzip label').addClass('red');
     } else {
       $('#input-billzip label').removeClass('red');
     }
-    if (zipCode.length === 5) {
-      zipValidation(zipCode);
-    } else if (zipCode.length !== 5) {
+    if (creditCard.zip.length === 5) {
+      zipValidation(creditCard.zip);
+    } else if (creditCard.zip.length !== 5) {
       $('#billzip').addClass('red');
     }
   });
@@ -208,7 +211,6 @@ jQuery(function($) {
       $('.ticket-info.conformation').append('<li>Please check your email for your ticket information or print out this page.</li>');
       $('#previouspage').remove();
       $('#back').append('<a href="../index.html" id="previouspage">Back Home</a>');
-
     }
     e.preventDefault();
   });
