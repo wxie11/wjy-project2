@@ -70,7 +70,7 @@ jQuery(function($) {
     var total = 0;
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      var seat = $(this).attr('for');
+      var seat = $(this).attr('name');
       // Add the current seat in the set to the `selected` array
       selected.push(seat);
     });
