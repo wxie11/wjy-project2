@@ -30,5 +30,8 @@
     "spaced-comment": ["warn", "always"],
     "semi": ["warn", "always"],
     "semi-spacing": ["error", {"before": false, "after": true}]
+  },
+  "globals": {
+    "Cookies": true
   }
 }
