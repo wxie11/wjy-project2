@@ -104,6 +104,9 @@ jQuery(function($) {
   $('#email').on('blur', function() {
     if ($('#email').val().length === 0) {
       $('#input-email label').removeClass('active');
+      $('#input-email label').addClass('red');
+    } else {
+      $('#input-email label').removeClass('red');
     }
     if (!reg.email.test($('#email').val())) {
       $('#email').addClass('red');
@@ -119,6 +122,9 @@ jQuery(function($) {
   $('#cardname').on('blur', function() {
     if ($('#cardname').val().length === 0) {
       $('#input-cardname label').removeClass('active');
+      $('#input-cardname label').addClass('red');
+    } else {
+      $('#input-cardname label').removeClass('red');
     }
     if (!reg.name.test($('#cardname').val())) {
       $('#cardname').addClass('red');
@@ -137,6 +143,9 @@ jQuery(function($) {
     if (cardNumber.length === 0) {
       $('#input-cardnumber label').removeClass('active');
       $('#cardnumber').removeClass('red');
+      $('#input-cardnumber label').addClass('red');
+    } else {
+      $('#input-cardnumber label').removeClass('red');
     }
     if (!reg.number.test(cardNumber)) {
       $('#cardnumber').addClass('red');
@@ -157,6 +166,9 @@ jQuery(function($) {
     if (expdate.length === 0) {
       $('#input-expdate label').removeClass('active');
       $('#expdate').removeAttr('placeholder', 'mmyy');
+      $('#input-expdate label').addClass('red');
+    } else {
+      $('#input-expdate label').removeClass('red');
     }
     if (!reg.exp.test(expdate)) {
       $('#expdate').addClass('red');
@@ -173,6 +185,9 @@ jQuery(function($) {
     var zipCode = $(this).val();
     if (zipCode.length === 0) {
       $('#input-billzip label').removeClass('active');
+      $('#input-billzip label').addClass('red');
+    } else {
+      $('#input-billzip label').removeClass('red');
     }
     if (zipCode.length === 5) {
       zipValidation(zipCode);
