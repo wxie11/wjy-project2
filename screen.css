@@ -11,7 +11,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 Default Values:
 baseline 22px
 font-size 18px
-line-height = baseline / font-size
+line-height = baseline multiplier / font-size
 
 Ready to Use:
 /*| Copy from here */
@@ -51,14 +51,14 @@ h2 {
   font-weight: bold;
   font-size: 1.5em; /* 27 / 18 = 1.5 */
   line-height: 1.2222222222em; /* 33 / 27 = 1.222 */
-  padding-bottom: 0.407407407em; /* 11 / 27 */
+  padding-bottom: 0.407407407em; /* 11 / 27 = 0.4074074074 */
 }
 
 h3 {
   font-weight: bold;
   font-size: 1.3333333333em; /* 24 / 18 = 1.3333333333 */
   line-height: 1.375em; /* 33 / 24 = 1.375 */
-  padding-bottom: 0.9166666667em; /* 22 / 24 */
+  padding-bottom: 0.9166666667em; /* 22 / 24 = 0.9166666667 */
 }
 
 p {
@@ -344,10 +344,10 @@ img {
     padding-right: 15%;
   }
   #seat #content {
-    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
+    padding-bottom: 12.2222222222em; /* 220 / 18 = 12.2222222222 */
   }
   #payment-container {
-    padding-bottom: 12.2222222em; /* 1.2222222222 * 10 */
+    padding-bottom: 12.2222222222em; /* 220 / 18 = 12.2222222222 */
   }
 
 }
