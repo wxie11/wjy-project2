@@ -196,6 +196,9 @@ jQuery(function($) {
       $('.ticket-info.conformation').prepend('<li><h3>Order number: ' + orderNumber + '</h3></li>');
       $('.ticket-info.conformation').append('<li>Paid By: ' + Cookies.get('cardType') + ' ' + Cookies.get('lastFourCard') + '</li>');
       $('.ticket-info.conformation').append('<li class="barcode">' + orderNumber + '</li>');
+      $('#previouspage').remove();
+      $('#back').append('<a href="../index.html" id="previouspage">Back Home</a>')
+
     }
     e.preventDefault();
   });
