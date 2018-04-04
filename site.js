@@ -10,6 +10,11 @@ $.noConflict();
 // jQuery 3.x-style ready event and locally scoped $
 jQuery(function($) {
   // Define veriables
+  var event = {
+    name: null,
+    provider: null,
+    time: null
+  };
   var reg = {
     email: /.+@.+/,
     name: /^[a-zA-Z\s]+$/,
@@ -31,38 +36,27 @@ jQuery(function($) {
   $('html').removeClass('nojs');
   $('html').addClass('hasjs');
 
+  $(".event").click(function() {
+    var log = $.trim($(this).text());
+    var eventClick = {
+      raw: log.split("\n")
+    };
+    event.name = eventClick.raw[0];
+    event.provider = $.trim(eventClick.raw[4]);
+    event.time = $.trim(eventClick.raw[5]);
 
-  // Cookies
-  $("#event1").click(function() {
-    Cookies.set('event', 'Strategies for Success');
-    Cookies.set('provider', 'Wenzhao Zhang');
-  });
-  $("#event2").click(function() {
-    Cookies.set('event', 'The Challenge of Change');
-    Cookies.set('provider', 'Jessica DeJesus');
-  });
-  $("#event3").click(function() {
-    Cookies.set('event', 'Why choose ITM?');
-    Cookies.set('provider', 'Wenwen Xie');
-  });
-  $("#event4").click(function() {
-    Cookies.set('event', 'Innovate, Integrate, Motivate');
-    Cookies.set('provider', 'Jia Yu Huang');
-  });
-  $("#event5").click(function() {
-    Cookies.set('event', 'THINK APIs!');
-    Cookies.set('provider', 'Professor Karl Stolley');
-  });
-  $("#event6").click(function() {
-    Cookies.set('event', 'Git your Hub');
-    Cookies.set('provider', 'Yifan Yao');
+    Cookies.set('event', event.name);
+    Cookies.set('provider', event.provider);
+    Cookies.set('time', event.time);
+
+    $(this).attr('href', 'seats');
   });
 
-  console.log(Cookies.get());
 
   // Seat Selection
   $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
   $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
+  $('.ticket-info').append('<li>' + Cookies.get('time') + '</li>');
   $('input[type="checkbox"]').toggleClass('hidden');
 
   $('.seat input,.seat label').on('click', function(e) {
