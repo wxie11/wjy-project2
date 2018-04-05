@@ -62,7 +62,7 @@ jQuery(function($) {
 
   // Seat Selection
   $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
-  $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
+  $('.ticket-info').append('<li class="padding">' + Cookies.get('provider') + '</li>');
   $('.ticket-info').append('<li>' + Cookies.get('time') + '</li>');
   $('input[type="checkbox"]').toggleClass('hidden');
 
@@ -97,7 +97,7 @@ jQuery(function($) {
   });
 
   // Get seat and amounts
-  $('.ticket-info.conformation').append('<li>Seat(s): ' + Cookies.get('seats') + '</li>');
+  $('.ticket-info.conformation').append('<li class="padding">Seat(s): ' + Cookies.get('seats') + '</li>');
   $('.ticket-info.conformation').append('<li class="total">Total: $' + Cookies.get('amount') + '</li>');
 
   // Animation for payment/index.html

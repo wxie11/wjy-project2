@@ -35,6 +35,8 @@ header {
   background-color: black;
   padding-bottom: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
   padding-top: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  padding-left: 1.2222222222em;
+  padding-right: 1.2222222222em;
 }
 
 section {
@@ -65,11 +67,14 @@ p {
   padding-bottom: 1.2222222222em;
 }
 
-
 footer {
   background-color: black;
   padding-bottom: 0.7em;
   padding-top: 0.7em;
+}
+
+img {
+  width: 100%;
 }
 
 a:link {
@@ -91,10 +96,6 @@ a ul:hover {
   padding: 0;
 }
 
-img {
-  width: 100%;
-}
-
 .red {
   color: red;
 }
@@ -107,6 +108,10 @@ img {
   background-color: red;
   color: white;
   text-align: center;
+}
+
+.padding {
+  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 .barcode {
@@ -135,10 +140,6 @@ img {
   border-radius: 0.27777777778em;
   color: white;
   font-weight: bold;
-}
-
-.submit-button {
-  padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 #back {
@@ -340,10 +341,9 @@ img {
     padding-right: 15%;
   }
   #seat #content {
-    padding-bottom: 12.2222222222em; /* 220 / 18 = 12.2222222222 */
+    padding-bottom: 6.1111111111em; /* 110 / 18 = 6.1111111111 */
   }
   #payment-container {
-    padding-bottom: 12.2222222222em; /* 220 / 18 = 12.2222222222 */
+    padding-bottom: 6.1111111111em; /* 110 / 18 = 6.1111111111 */
   }
-
 }
