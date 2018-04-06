@@ -1,6 +1,13 @@
 /* eslint-disable */
 /* jshint ignore:start */
-
+/**
+ * Minified by jsDelivr using UglifyJS v3.3.16.
+ * Original file: /npm/js-cookie@2.2.0/src/js.cookie.js
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+!function(e){var n=!1;if("function"==typeof define&&define.amd&&(define(e),n=!0),"object"==typeof exports&&(module.exports=e(),n=!0),!n){var o=window.Cookies,t=window.Cookies=e();t.noConflict=function(){return window.Cookies=o,t}}}(function(){function g(){for(var e=0,n={};e<arguments.length;e++){var o=arguments[e];for(var t in o)n[t]=o[t]}return n}return function e(l){function C(e,n,o){var t;if("undefined"!=typeof document){if(1<arguments.length){if("number"==typeof(o=g({path:"/"},C.defaults,o)).expires){var r=new Date;r.setMilliseconds(r.getMilliseconds()+864e5*o.expires),o.expires=r}o.expires=o.expires?o.expires.toUTCString():"";try{t=JSON.stringify(n),/^[\{\[]/.test(t)&&(n=t)}catch(e){}n=l.write?l.write(n,e):encodeURIComponent(String(n)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),e=(e=(e=encodeURIComponent(String(e))).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent)).replace(/[\(\)]/g,escape);var i="";for(var c in o)o[c]&&(i+="; "+c,!0!==o[c]&&(i+="="+o[c]));return document.cookie=e+"="+n+i}e||(t={});for(var a=document.cookie?document.cookie.split("; "):[],s=/(%[0-9A-Z]{2})+/g,f=0;f<a.length;f++){var p=a[f].split("="),d=p.slice(1).join("=");this.json||'"'!==d.charAt(0)||(d=d.slice(1,-1));try{var u=p[0].replace(s,decodeURIComponent);if(d=l.read?l.read(d,u):l(d,u)||d.replace(s,decodeURIComponent),this.json)try{d=JSON.parse(d)}catch(e){}if(e===u){t=d;break}e||(t[u]=d)}catch(e){}}return t}}return(C.set=C).get=function(e){return C.call(C,e)},C.getJSON=function(){return C.apply({json:!0},[].slice.call(arguments))},C.defaults={},C.remove=function(e,n){C(e,"",g(n,{expires:-1}))},C.withConverter=e,C}(function(){})});
+//# sourceMappingURL=/sm/31d5cd1b58ce5e6231e4ea03a69b2801a53e76e98152bc29dc82a494ed0a1ee6.map
 /* jshint ignore:end */
 /* eslint-enable */
 
@@ -10,12 +17,24 @@ $.noConflict();
 // jQuery 3.x-style ready event and locally scoped $
 jQuery(function($) {
   // Define veriables
+  var event = {
+    name: null,
+    provider: null,
+    time: null
+  };
   var reg = {
     email: /.+@.+/,
     name: /^[a-zA-Z\s]+$/,
     number: /^\d{16}$/,
     exp: /^\d{4}$/
   };
+  var creditCard = {
+    name: null,
+    number: null,
+    exp: null,
+    zip: null,
+    type: null,
+  }
   var validate = {
     email: false,
     name: false,
@@ -31,49 +50,38 @@ jQuery(function($) {
   $('html').removeClass('nojs');
   $('html').addClass('hasjs');
 
-  // Cookies
-  $("#event1").click(function() {
-    Cookies.set('event', 'Strategies for Success');
-    Cookies.set('provider', 'Wenzhao Zhang');
-  });
-  $("#event2").click(function() {
-    Cookies.set('event', 'The Challenge of Change');
-    Cookies.set('provider', 'Jessica DeJesus');
-  });
-  $("#event3").click(function() {
-    Cookies.set('event', 'Why choose ITM?');
-    Cookies.set('provider', 'Wenwen Xie');
-  });
-  $("#event4").click(function() {
-    Cookies.set('event', 'Innovate, Integrate, Motivate');
-    Cookies.set('provider', 'Jia Yu Huang');
-  });
-  $("#event5").click(function() {
-    Cookies.set('event', 'THINK APIs!');
-    Cookies.set('provider', 'Professor Karl Stolley');
-  });
-  $("#event6").click(function() {
-    Cookies.set('event', 'Git your Hub');
-    Cookies.set('provider', 'Yifan Yao');
+  $(".event").click(function() {
+    var log = $.trim($(this).text());
+    var eventClick = {
+      raw: log.split("\n")
+    };
+    event.name = eventClick.raw[0];
+    event.provider = $.trim(eventClick.raw[4]);
+    event.time = $.trim(eventClick.raw[5]);
+
+    Cookies.set('event', event.name);
+    Cookies.set('provider', event.provider);
+    Cookies.set('time', event.time);
+
+    $(this).attr('href', 'seats');
   });
 
-  console.log(Cookies.get());
 
   // Seat Selection
   $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
-  $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
+  $('.ticket-info').append('<li class="padding">' + Cookies.get('provider') + '</li>');
+  $('.ticket-info').append('<li>' + Cookies.get('time') + '</li>');
   $('input[type="checkbox"]').toggleClass('hidden');
 
-  $('.seat input, .seat label').on('click', function(e) {
+  $('.seat input,.seat label').on('click', function(e) {
     var selected = [];
     var total = 0;
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      var seat = $(this).attr('for');
+      var seat = $(this).attr('name');
       // Add the current seat in the set to the `selected` array
       selected.push(seat);
     });
-    console.log(selected.length);
     $('#summary').empty();
     $('#summary').append(selected.join(","));
     $('#money').empty();
@@ -84,21 +92,19 @@ jQuery(function($) {
     e.preventDefault();
   });
 
-  $('.submission').on('click', function(e) {
+  $('.submission').on('click', function() {
     if($('.selected').length < 1) {
-      $('#msg').empty();
-      $('#msg').append('<p>Please choose at least one seat</p>');
-      console.log($('.selected').length);
-
+      $('#oneSeat').remove();
+      $('.submit-button').append('<p id="oneSeat">Please choose at least one seat.</p>');
       return false;
-      }
-      else {
-        return true;
-      }
+    }
+    else {
+      return true;
+    }
   });
 
   // Get seat and amounts
-  $('.ticket-info.conformation').append('<li>Seat(s): ' + Cookies.get('seats') + '</li>');
+  $('.ticket-info.conformation').append('<li class="padding">Seat(s): ' + Cookies.get('seats') + '</li>');
   $('.ticket-info.conformation').append('<li class="total">Total: $' + Cookies.get('amount') + '</li>');
 
   // Animation for payment/index.html
@@ -109,6 +115,9 @@ jQuery(function($) {
   $('#email').on('blur', function() {
     if ($('#email').val().length === 0) {
       $('#input-email label').removeClass('active');
+      $('#input-email label').addClass('red');
+    } else {
+      $('#input-email label').removeClass('red');
     }
     if (!reg.email.test($('#email').val())) {
       $('#email').addClass('red');
@@ -117,72 +126,83 @@ jQuery(function($) {
       validate.email = true;
     }
   });
-  $('#cardName').on('focus', function() {
-    $('#input-cardName label').addClass('active');
-    $('#cardName').removeClass('red');
+  $('#cardname').on('focus', function() {
+    $('#input-cardname label').addClass('active');
+    $('#cardname').removeClass('red');
   });
-  $('#cardName').on('blur', function() {
-    if ($('#cardName').val().length === 0) {
-      $('#input-cardName label').removeClass('active');
+  $('#cardname').on('blur', function() {
+    creditCard.name = $('#cardname').val();
+    if (creditCard.name.length === 0) {
+      $('#input-cardname label').removeClass('active');
+      $('#input-cardname label').addClass('red');
+    } else {
+      $('#input-cardname label').removeClass('red');
     }
-    if (!reg.name.test($('#cardName').val())) {
-      $('#cardName').addClass('red');
+    if (!reg.name.test(creditCard.name)) {
+      $('#cardname').addClass('red');
       validate.name = false;
     } else {
       validate.name = true;
     }
   });
-  $('#cardNumber').on('focus', function() {
-    $('#input-cardNumber label').addClass('active');
-    $('#cardNumber').removeClass('red');
+  $('#cardnumber').on('focus', function() {
+    $('#input-cardnumber label').addClass('active');
+    $('#cardnumber').removeClass('red');
   });
-  $('#cardNumber').on('blur', function() {
-    var cardNumber = $(this).val();
-    var cardType = null;
-    if (cardNumber.length === 0) {
-      $('#input-cardNumber label').removeClass('active');
-      $('#cardNumber').removeClass('red');
-    }
-    if (!reg.number.test(cardNumber)) {
-      $('#cardNumber').addClass('red');
+  $('#cardnumber').on('blur', function() {
+    creditCard.number = $(this).val();
+    if (creditCard.number.length === 0) {
+      $('#input-cardnumber label').removeClass('active');
+      $('#cardnumber').removeClass('red');
+      $('#input-cardnumber label').addClass('red');
     } else {
-      cardType = cardValidation(cardNumber);
-      Cookies.set('cardType', cardType);
-      Cookies.set('lastFourCard', cardNumber.substring(12,16));
-      console.log(cardType);
+      $('#input-cardnumber label').removeClass('red');
+    }
+    if (!reg.number.test(creditCard.number)) {
+      $('#cardnumber').addClass('red');
+    } else {
+      creditCard.cardType = cardValidation(creditCard.number);
+      Cookies.set('cardType', creditCard.cardType);
+      Cookies.set('lastFourCard', creditCard.number.substring(12, 16));
     }
   });
-  $('#expDate').on('focus', function() {
-    $('#input-expDate label').addClass('active');
-    $('#expDate').attr('placeholder', 'mmyy');
-    $('#expDate').removeClass('red');
+  $('#expdate').on('focus', function() {
+    $('#input-expdate label').addClass('active');
+    $('#expdate').attr('placeholder', 'mmyy');
+    $('#expdate').removeClass('red');
   });
-  $('#expDate').on('blur', function() {
-    var expDate = $(this).val();
-    if (expDate.length === 0) {
-      $('#input-expDate label').removeClass('active');
-      $('#expDate').removeAttr('placeholder', 'mmyy');
+  $('#expdate').on('blur', function() {
+    creditCard.exp = $(this).val();
+    if (creditCard.exp.length === 0) {
+      $('#input-expdate label').removeClass('active');
+      $('#expdate').removeAttr('placeholder', 'mmyy');
+      $('#input-expdate label').addClass('red');
+    } else {
+      $('#input-expdate label').removeClass('red');
     }
-    if (!reg.exp.test(expDate)) {
-      $('#expDate').addClass('red');
+    if (!reg.exp.test(creditCard.exp)) {
+      $('#expdate').addClass('red');
       validate.exp = false;
     } else {
-      expValidation(expDate);
+      expValidation(creditCard.exp);
     }
   });
-  $('#billZip').on('focus', function() {
-    $('#input-billZip label').addClass('active');
-    $('#billZip').removeClass('red');
+  $('#billzip').on('focus', function() {
+    $('#input-billzip label').addClass('active');
+    $('#billzip').removeClass('red');
   });
-  $('#billZip').on('blur', function() {
-    var zipCode = $(this).val();
-    if (zipCode.length === 0) {
-      $('#input-billZip label').removeClass('active');
+  $('#billzip').on('blur', function() {
+    creditCard.zip = $(this).val();
+    if (creditCard.zip.length === 0) {
+      $('#input-billzip label').removeClass('active');
+      $('#input-billzip label').addClass('red');
+    } else {
+      $('#input-billzip label').removeClass('red');
     }
-    if (zipCode.length === 5) {
-      zipValidation(zipCode);
-    } else if (zipCode.length !== 5) {
-      $('#billZip').addClass('red');
+    if (creditCard.zip.length === 5) {
+      zipValidation(creditCard.zip);
+    } else if (creditCard.zip.length !== 5) {
+      $('#billzip').addClass('red');
     }
   });
   $('#form-card').on("submit", function(e) {
@@ -195,20 +215,20 @@ jQuery(function($) {
       $('.ticket-info.conformation').prepend('<li><h3>Order number: ' + orderNumber + '</h3></li>');
       $('.ticket-info.conformation').append('<li>Paid By: ' + Cookies.get('cardType') + ' ' + Cookies.get('lastFourCard') + '</li>');
       $('.ticket-info.conformation').append('<li class="barcode">' + orderNumber + '</li>');
+      $('.ticket-info.conformation').append('<li>Please check your email for your ticket information or print out this page.</li>');
+      $('#previouspage').remove();
+      $('#back').append('<a href="../index.html" id="previouspage">Back Home</a>');
     }
     e.preventDefault();
   });
 
-  //animation for html
-
+  // Animation for html
   $('#intro').css('display', 'none');
   $('#intro').fadeIn(5000);
   $('#spreadinfo').css('display', 'none');
   $('#spreadinfo').fadeIn(3000);
   $('#button').css('display', 'none');
   $('#button').fadeIn(3000);
-
-
 
   // Card number validation
   function cardValidation(cardNumber) {
@@ -233,7 +253,7 @@ jQuery(function($) {
       validate.number = true;
       return cardType;
     } else {
-      $('#cardNumber').addClass('red');
+      $('#cardnumber').addClass('red');
       cardType = "unknown";
       validate.number = false;
       return cardType;
@@ -257,7 +277,7 @@ jQuery(function($) {
     } else if (year === 0 && month >= 0) {
       validate.exp = true;
     } else {
-      $('#expDate').addClass('red');
+      $('#expdate').addClass('red');
       validate.exp = false;
     }
     console.log("Card expired in " + year + " year " + month + " month.");
@@ -273,7 +293,7 @@ jQuery(function($) {
           validate.zip = true;
         },
         404: function() {
-          $('#billZip').addClass('red');
+          $('#billzip').addClass('red');
           validate.zip = false;
         }
       }
