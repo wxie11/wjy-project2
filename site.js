@@ -64,7 +64,7 @@ jQuery(function($) {
   $('.ticket-info').append('<li>' + Cookies.get('provider') + '</li>');
   $('input[type="checkbox"]').toggleClass('hidden');
 
-  $('.seat input,.seat label').on('click', function(e) {
+  $('.seat input, .seat label').on('click', function(e) {
     var selected = [];
     var total = 0;
     $(this).toggleClass('selected');
