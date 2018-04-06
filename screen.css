@@ -238,7 +238,8 @@ a ul:hover {
   position: relative;
 }
 .unavailable {
-  background: #75787c;
+  background: #C0C0C0;
+  color: #A9A9A9;
   cursor: default;
 }
 /* Payment */
