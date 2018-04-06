@@ -237,7 +237,10 @@ a ul:hover {
   display: flex;
   position: relative;
 }
-
+.unavailable {
+  background: #75787c;
+  cursor: default;
+}
 /* Payment */
 #form-card label {
   display: block;

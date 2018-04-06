@@ -73,8 +73,18 @@ jQuery(function($) {
   $('.ticket-info').append('<li>' + Cookies.get('time') + '</li>');
   $('input[type="checkbox"]').toggleClass('hidden');
 
+  var unavailable = ["1B", "1C", "5E"];
+  $.each(unavailable, function(i,v){
+    $('.seat [name="'+v+'"]').addClass('unavailable');
+  });
+
+
   $('.seat input,.seat label').on('click', function(e) {
     var selected = [];
+    e.preventDefault();
+    if($(this).hasClass('unavailable')) {
+      return;
+    }
     var total = 0;
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
