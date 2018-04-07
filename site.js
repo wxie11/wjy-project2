@@ -33,8 +33,8 @@ jQuery(function($) {
     number: null,
     exp: null,
     zip: null,
-    type: null,
-  }
+    type: null
+  };
   var validate = {
     email: false,
     name: false,
@@ -42,6 +42,9 @@ jQuery(function($) {
     exp: false,
     zip: false
   };
+
+  var unavailable = ["one-b", "one-c", "five-e"]; // Seat Selection
+
   var loadFX = function() {
     $('html').addClass('fx');
   };
@@ -73,22 +76,23 @@ jQuery(function($) {
   $('.ticket-info').append('<li>' + Cookies.get('time') + '</li>');
   $('input[type="checkbox"]').toggleClass('hidden');
 
-  var unavailable = ["1B", "1C", "5E"];
-  $.each(unavailable, function(i,v){
-    $('.seat [name="'+v+'"]').addClass('unavailable');
+  $.each(unavailable, function(i, v){
+    $('.seat [for="'+v+'"]').addClass('unavailable');
   });
 
 
   $('.seat input,.seat label').on('click', function(e) {
     var selected = [];
+    var total = 0;
+
     e.preventDefault();
     if($(this).hasClass('unavailable')) {
       return;
     }
-    var total = 0;
+
     $(this).toggleClass('selected');
     $('.selected', '.rows').each(function() {
-      var seat = $(this).attr('name');
+      var seat = $(this).text();
       // Add the current seat in the set to the `selected` array
       selected.push(seat);
     });

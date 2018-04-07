@@ -96,6 +96,10 @@ a ul:hover {
   padding: 0;
 }
 
+.event {
+  cursor: pointer;
+}
+
 .red {
   color: red;
 }
