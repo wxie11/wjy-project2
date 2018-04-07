@@ -34,6 +34,7 @@ jQuery(function($) {
     exp: /^\d{4}$/
   };
   var creditCard = {
+    email: null,
     name: null,
     number: null,
     exp: null,
@@ -96,7 +97,7 @@ jQuery(function($) {
     var total = 0;
 
     e.preventDefault();
-    if($(this).hasClass('unavailable')) {
+    if ($(this).hasClass('unavailable')) {
       return;
     }
 
@@ -117,7 +118,7 @@ jQuery(function($) {
   });
 
   $('.submission').on('click', function() {
-    if($('.selected').length < 1) {
+    if ($('.selected').length < 1) {
       $('#oneSeat').remove();
       $('.submit-button').append('<p id="oneSeat">Please choose at least one seat.</p>');
       return false;
@@ -137,13 +138,14 @@ jQuery(function($) {
     $('#email').removeClass('red');
   });
   $('#email').on('blur', function() {
-    if ($('#email').val().length === 0) {
+    creditCard.email = $('#email').val();
+    if (creditCard.email.length === 0) {
       $('#input-email label').removeClass('active');
       $('#input-email label').addClass('red');
     } else {
       $('#input-email label').removeClass('red');
     }
-    if (!reg.email.test($('#email').val())) {
+    if (!reg.email.test(creditCard.email)) {
       $('#email').addClass('red');
       validate.email = false;
     } else {
@@ -318,6 +320,22 @@ jQuery(function($) {
 
   // From validateion
   function formValidation() {
+    // Highlight missing value
+    if (creditCard.email === null) {
+      $('#input-email label').addClass('red');
+    }
+    if (creditCard.name === null) {
+      $('#input-cardname label').addClass('red');
+    }
+    if (creditCard.number === null) {
+      $('#input-cardnumber label').addClass('red');
+    }
+    if (creditCard.exp === null) {
+      $('#input-expdate label').addClass('red');
+    }
+    if (creditCard.zip === null) {
+      $('#input-billzip label').addClass('red');
+    }
     if (validate.email === true &&
       validate.name === true &&
       validate.number === true &&
