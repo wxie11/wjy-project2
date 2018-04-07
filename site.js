@@ -287,10 +287,11 @@ jQuery(function($) {
     };
     var month = (Number(exp.month) - today.getMonth() - 1);
     var year = (Number(exp.year) - today.getYear() + 100);
-    if (month < 0 || month > 12) {
+    // Check input value
+    if (exp.month < 0 || exp.month > 12) {
+      $('#expdate').addClass('red');
       validate.exp = false;
-    }
-    if (year > 0) {
+    } else if (year > 0 && exp.month > 0 && exp.month <= 12) {
       validate.exp = true;
     } else if (year === 0 && month >= 0) {
       validate.exp = true;
