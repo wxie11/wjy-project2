@@ -22,6 +22,11 @@ jQuery(function($) {
     provider: null,
     time: null
   };
+
+  // Unavailable seats
+  var unavailable = ["one-b", "one-c", "five-e"];
+
+  // Form elements
   var reg = {
     email: /.+@.+/,
     name: /^[a-zA-Z\s]+$/,
@@ -43,8 +48,6 @@ jQuery(function($) {
     zip: false
   };
 
-  var unavailable = ["one-b", "one-c", "five-e"]; // Seat Selection
-
   var loadFX = function() {
     $('html').addClass('fx');
   };
@@ -53,6 +56,15 @@ jQuery(function($) {
   $('html').removeClass('nojs');
   $('html').addClass('hasjs');
 
+  // Animation for html
+  $('#intro').css('display', 'none');
+  $('#intro').fadeIn(5000);
+  $('#spreadinfo').css('display', 'none');
+  $('#spreadinfo').fadeIn(3000);
+  $('#button').css('display', 'none');
+  $('#button').fadeIn(3000);
+
+  // Event selection
   $(".event").click(function() {
     var log = $.trim($(this).text());
     var eventClick = {
@@ -69,7 +81,6 @@ jQuery(function($) {
     $(this).attr('href', 'seats');
   });
 
-
   // Seat Selection
   $('.ticket-info').append('<li>' + Cookies.get('event') + '</li>');
   $('.ticket-info').append('<li class="padding">' + Cookies.get('provider') + '</li>');
@@ -79,7 +90,6 @@ jQuery(function($) {
   $.each(unavailable, function(i, v){
     $('.seat [for="'+v+'"]').addClass('unavailable');
   });
-
 
   $('.seat input,.seat label').on('click', function(e) {
     var selected = [];
@@ -235,14 +245,6 @@ jQuery(function($) {
     }
     e.preventDefault();
   });
-
-  // Animation for html
-  $('#intro').css('display', 'none');
-  $('#intro').fadeIn(5000);
-  $('#spreadinfo').css('display', 'none');
-  $('#spreadinfo').fadeIn(3000);
-  $('#button').css('display', 'none');
-  $('#button').fadeIn(3000);
 
   // Card number validation
   function cardValidation(cardNumber) {
