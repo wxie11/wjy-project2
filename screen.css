@@ -118,10 +118,8 @@ a ul:hover {
   padding-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
-.barcode {
-  padding-top: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  font-size: 3.6666666667em; /* 66 / 18 = 3.6666666667 */
-  font-family: "Libre Barcode 39", cursive;
+.qrcode {
+  width: 10em; /* 220 / 22 = 10 */
 }
 
 #banner {
