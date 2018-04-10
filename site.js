@@ -108,11 +108,11 @@ jQuery(function($) {
       selected.push(seat);
     });
     $('#summary').empty();
-    $('#summary').append(selected.join(","));
+    $('#summary').append(selected.join(", "));
     $('#money').empty();
     total = selected.length * 12;
     $('#money').append('$' + total);
-    Cookies.set('seats', selected.join(","));
+    Cookies.set('seats', selected.join(", "));
     Cookies.set('amount', total);
     e.preventDefault();
   });
@@ -232,15 +232,14 @@ jQuery(function($) {
     }
   });
   $('#form-card').on("submit", function(e) {
-    var time = Date.now();
-    var orderNumber = Math.round(time / 10000);
+    var orderNumber = Math.round(Date.now() / 1000) - 15000000;
     if (formValidation() === true) {
       console.log("Success");
       $('#form-content').remove();
       $('#ticket').replaceWith('<h2>Your Confirmation</h2>');
       $('.ticket-info.conformation').prepend('<li><h3>Order number: ' + orderNumber + '</h3></li>');
-      $('.ticket-info.conformation').append('<li>Paid By: ' + Cookies.get('cardType') + ' ' + Cookies.get('lastFourCard') + '</li>');
-      $('.ticket-info.conformation').append('<li class="barcode">' + orderNumber + '</li>');
+      $('.ticket-info.conformation').append('<li class="padding">Paid By: ' + Cookies.get('cardType') + ' ' + Cookies.get('lastFourCard') + '</li>');
+      $('.ticket-info.conformation').append('<li class="qrcode"><img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&amp;data=' + orderNumber + '" /></li>');
       $('.ticket-info.conformation').append('<li>Please check your email for your ticket information or print out this page.</li>');
       $('#previouspage').remove();
       $('#back').append('<a href="../index.html" id="previouspage">Back Home</a>');
