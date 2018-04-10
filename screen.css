@@ -203,47 +203,40 @@ a ul:hover {
 }
 
 /* Seats */
-.row1, .row2, .row3, .row4, .row5, .row6 {
-  display: flex;
-  flex-direction: row;
-}
 .rows {
+  padding-top: 0.611em; /* 11 / 18 = 0.6111 */
   width: 15.725em;
   margin: 0 auto;
 }
 .rows h2 {
   margin: 0;
-  padding: 0;
-  background: black;
-  color: white;
   text-align: center;
 }
-.hidden {
-  display: none;
+.seats {
+  display: flex;
 }
-.individual {
-  display: inline-block;
-  width: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
-  height: 3.0555555556em; /* 3.0555555556em; /* 55 / 18 = 3.0555555556 */
-  text-align: center;
+.seats a {
+  display: block;
+  line-height: 1;
+  margin-right: 0.611em; /* 11 / 18 = 0.6111 */
+  margin-bottom: 0.611em; /* 11 / 18 = 0.6111 */
+  padding: 0.722em 0; /* 13 / 18 = 0.722 */
+  width: 2.4444444444em; /* 44 / 18 = 2.4444444444 */
   border: 0.05em solid black;
-  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
-.selected {
+.seats a.selected {
   background: red;
   color: white;
   transition: 0.5s;
 }
-.seat {
-  display: flex;
-  position: relative;
-}
-.unavailable {
+.seats a.unavailable {
   background: #C0C0C0;
   color: #A9A9A9;
   cursor: default;
 }
+
 /* Payment */
 #form-card label {
   display: block;
