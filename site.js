@@ -24,7 +24,7 @@ jQuery(function($) {
   };
 
   // Unavailable seats
-  var unavailable = ["one-b", "one-c", "five-e"];
+  var unavailable = ["a1", "b5", "c1", "e5"];
 
   // Form elements
   var reg = {
@@ -89,10 +89,10 @@ jQuery(function($) {
   $('input[type="checkbox"]').toggleClass('hidden');
 
   $.each(unavailable, function(i, v){
-    $('.seat [for="'+v+'"]').addClass('unavailable');
+    $('.seats a[href="#'+v+'"]').addClass('unavailable');
   });
 
-  $('.seat input,.seat label').on('click', function(e) {
+  $('.seats a').on('click', function(e) {
     var selected = [];
     var total = 0;
 
