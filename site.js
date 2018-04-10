@@ -240,7 +240,7 @@ jQuery(function($) {
       $('.ticket-info.conformation').prepend('<li><h3>Order number: ' + orderNumber + '</h3></li>');
       $('.ticket-info.conformation').append('<li class="padding">Paid By: ' + Cookies.get('cardType') + ' ' + Cookies.get('lastFourCard') + '</li>');
       $('.ticket-info.conformation').append('<li class="qrcode"><img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&amp;data=' + orderNumber + '" /></li>');
-      $('.ticket-info.conformation').append('<li>Please check your email for your ticket information or print out this page.</li>');
+      $('.ticket-info.conformation').append('<li class="padding">Please check your email for your ticket information or print out this page.</li>');
       $('#previouspage').remove();
       $('#back').append('<a href="../index.html" id="previouspage">Back Home</a>');
     }
